@@ -1,9 +1,8 @@
 <?php
 if(isset($websiteIsLive)) {
-    require 'vendor/phpmailer/phpmailer/PHPMailerAutoload.php';
-    require 'vendor/autoload.php';
-
-    $mail = new PHPMailerOAuth;
+    if (!class_exists('PHPMailerOAuth')) {
+        require_once dirname(dirname(__DIR__)) . '/vendor/autoload.php';
+    }
 
     $smtp = array(
         "host"=>"smtp.gmail.com",
@@ -36,11 +35,17 @@ if(isset($websiteIsLive)) {
         $sendMailObj["replyInfo"] = "Phpvnn.com";
     }
 
-
     $sendMailObj["smtp"] = $smtp;
 
-    if($sendMailObj) {
-         if(isset($sendMailObj["smtp"])) {
+    $oauthUserEmail = isset($informationWebsite["backendConfig"]["phpmailer"]["oauthUserEmail"]) ? $informationWebsite["backendConfig"]["phpmailer"]["oauthUserEmail"] : "";
+    $oauthClientId = isset($informationWebsite["backendConfig"]["phpmailer"]["oauthClientId"]) ? $informationWebsite["backendConfig"]["phpmailer"]["oauthClientId"] : "";
+    $oauthClientSecret = isset($informationWebsite["backendConfig"]["phpmailer"]["oauthClientSecret"]) ? $informationWebsite["backendConfig"]["phpmailer"]["oauthClientSecret"] : "";
+    $oauthRefreshToken = isset($informationWebsite["backendConfig"]["phpmailer"]["oauthRefreshToken"]) ? $informationWebsite["backendConfig"]["phpmailer"]["oauthRefreshToken"] : "";
+
+    // Only attempt to send mail via OAuth if credentials are configured
+    if(!empty($oauthClientId) && !empty($oauthRefreshToken)) {
+        try {
+            $mail = new PHPMailerOAuth;
             $mail->isSMTP();
             $mail->SMTPDebug = 0;
             $mail->Host = $smtp["host"];
@@ -56,64 +61,59 @@ if(isset($websiteIsLive)) {
             );
 
             $mail->AuthType = 'XOAUTH2';
-            $mail->oauthUserEmail    = "";
-            $mail->oauthClientId     = "";
-            $mail->oauthClientSecret = "";
-            $mail->oauthRefreshToken = "";
-
-            if(isset($informationWebsite["backendConfig"]["phpmailer"]["oauthUserEmail"]) && !empty($informationWebsite["backendConfig"]["phpmailer"]["oauthUserEmail"]) ) {
-                $mail->oauthUserEmail = $informationWebsite["backendConfig"]["phpmailer"]["oauthUserEmail"];
-            }
-            if(isset($informationWebsite["backendConfig"]["phpmailer"]["oauthClientId"]) && !empty($informationWebsite["backendConfig"]["phpmailer"]["oauthClientId"]) ) {
-                $mail->oauthClientId = $informationWebsite["backendConfig"]["phpmailer"]["oauthClientId"];
-            }
-            if(isset($informationWebsite["backendConfig"]["phpmailer"]["oauthClientId"]) && !empty($informationWebsite["backendConfig"]["phpmailer"]["oauthClientId"]) ) {
-                $mail->oauthClientSecret = $informationWebsite["backendConfig"]["phpmailer"]["oauthClientSecret"];
-            }
-            if(isset($informationWebsite["backendConfig"]["phpmailer"]["oauthRefreshToken"]) && !empty($informationWebsite["backendConfig"]["phpmailer"]["oauthRefreshToken"]) ) {
-                $mail->oauthRefreshToken = $informationWebsite["backendConfig"]["phpmailer"]["oauthRefreshToken"];
-            }
+            $mail->oauthUserEmail    = $oauthUserEmail;
+            $mail->oauthClientId     = $oauthClientId;
+            $mail->oauthClientSecret = $oauthClientSecret;
+            $mail->oauthRefreshToken = $oauthRefreshToken;
 
             $mail->Mailtype         = 'html';
             $mail->Charset          = 'utf-8';
             $mail->Crlf             = "\r\n";
             $mail->Newline          = "\r\n";
-        }
 
-        if(isset($informationWebsite["backendConfig"]["phpmailer"]["textsender"]) && !empty($informationWebsite["backendConfig"]["phpmailer"]["textsender"])) {
-            $sendMailObj["sender"] = $informationWebsite["backendConfig"]["phpmailer"]["textsender"];
-        }
-
-        $mail->setFrom($sendMailObj["from"], $sendMailObj["sender"]);
-        $mail->addReplyTo($sendMailObj["reply"], $sendMailObj["replyInfo"]);
-        $mail->addAddress($sendMailObj["to"]);
-        $mail->CharSet= "utf-8";
-        $mail->isHTML(true);
-        $mail->Subject = $sendMailObj["subject"];
-        $mail->Body    = $sendMailObj["content"];
-        $mail->AltBody = isset($sendMailObj["altBody"]) ? $sendMailObj["altBody"] : $sendMailObj["content"];
-
-        if(isset($listMailCC) && $listMailCC) {
-            foreach ($listMailCC as $key => $value) {
-                $mail->AddCC($value["email"], $value["name"]);
+            if(isset($informationWebsite["backendConfig"]["phpmailer"]["textsender"]) && !empty($informationWebsite["backendConfig"]["phpmailer"]["textsender"])) {
+                $sendMailObj["sender"] = $informationWebsite["backendConfig"]["phpmailer"]["textsender"];
             }
-        } elseif(isset($listMailBCC) && $listMailBCC) {
-            foreach ($listMailBCC as $key => $value) {
-                $mail->AddBCC($value["email"], $value["name"]);
-            }
-        }
 
-        if (!$mail->send()) {
-            $code = 500;
-            $errors = 'Mailer Error: ' . $mail->ErrorInfo;
-        } else {
-            $code = 200;
-            $message = $message ? $message : "Message sent !!!";
-            $isDone = true;
+            $mail->setFrom($sendMailObj["from"], $sendMailObj["sender"]);
+            $mail->addReplyTo($sendMailObj["reply"], $sendMailObj["replyInfo"]);
+            $mail->addAddress($sendMailObj["to"]);
+            $mail->CharSet= "utf-8";
+            $mail->isHTML(true);
+            $mail->Subject = $sendMailObj["subject"];
+            $mail->Body    = $sendMailObj["content"];
+            $mail->AltBody = isset($sendMailObj["altBody"]) ? $sendMailObj["altBody"] : $sendMailObj["content"];
+
+            if(isset($listMailCC) && $listMailCC) {
+                foreach ($listMailCC as $key => $value) {
+                    $mail->AddCC($value["email"], $value["name"]);
+                }
+            } elseif(isset($listMailBCC) && $listMailBCC) {
+                foreach ($listMailBCC as $key => $value) {
+                    $mail->AddBCC($value["email"], $value["name"]);
+                }
+            }
+
+            if (!$mail->send()) {
+                error_log('Mailer Error: ' . $mail->ErrorInfo);
+            } else {
+                $isDone = true;
+            }
+        } catch (Exception $e) {
+            error_log('Mailer Exception: ' . $e->getMessage());
         }
+    } else {
+        $isDone = true;
     }
 } else {
     $isDone = true;
+}
+
+if (!isset($code) || $code === null) {
+    $code = 200;
+}
+if (!isset($message) || empty($message)) {
+    $message = "Message sent !!!";
 }
 
 

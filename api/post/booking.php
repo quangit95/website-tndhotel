@@ -76,7 +76,7 @@ if($nodeUpdate == "db") {
     if (saveXMLFile($file, $itemList)) {
         $code = 200;
 
-        $message = '<p>Cảm ơn bạn đã liên hệ.</p><p>Chúng tôi sẽ liện lạc với bạn trong vòng thời gian sớm nhất.</p>';
+        $message = '<p>Cảm ơn bạn đã liên hệ.</p><p>Chúng tôi sẽ liên lạc với bạn trong thời gian sớm nhất.</p>';
         $messageBooking = '<div><h3>Booking info</h3>'.$strInfoBooking.'</div><hr>'.'<div><h3>Customer info</h3>'.$strInfoCustomer.'</div>';
         $dataResponse = array("sms"=>$messageBooking);
 
