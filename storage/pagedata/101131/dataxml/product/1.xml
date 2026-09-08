@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<information>
+  <db>
+    <id>1</id>
+    <ti>
+      <vi>Deluxe With Window</vi>
+      <en>Deluxe With Window</en>
+    </ti>
+    <ti1>
+      <vi></vi>
+      <en></en>
+    </ti1>
+    <ct>
+      <vi>Square 28 meters</vi>
+      <en>Square 28 meters</en>
+    </ct>
+    <tag></tag>
+    <cat>2</cat>
+    <pr>
+      <sale>0</sale>
+      <off></off>
+    </pr>
+    <ra></ra>
+    <so>6</so>
+    <st>2</st>
+    <cr>1684553792</cr>
+    <im>1_a.JPG</im>
+  </db>
+  <more>
+    <vi>
+      <content/>
+      <description/>
+    </vi>
+    <en>
+      <content/>
+      <description/>
+    </en>
+    <youtubeId/>
+    <isShowSlide>1</isShowSlide>
+  </more>
+  <dateModified>1684555324</dateModified>
+</information>

@@ -1,0 +1,108 @@
+.lt-ie9 .website {
+    display: none;
+}
+
+.container {
+    padding: 0 5px;
+}
+
+.img-detail .col-xs-2 img {
+    width: auto;
+    max-height: 60px;
+    display: block;
+}
+
+
+
+/* Header */
+
+#header .contact-info {
+    margin-top: 25px;
+}
+
+#header .top-search {
+    display: none;
+}
+.logo img {
+    width: 100px;
+}
+.top-bar {
+    display: none;
+}
+/* Menu */
+.s-icon:before {
+    color: red;
+}
+
+#main-menu .desktop-menu > ul {
+    background-color: black;
+}
+#main-menu .desktop-menu > ul > li {
+    display: inline-block;
+    float: none;
+}
+#main-menu .desktop-menu a {
+    text-transform: uppercase;
+    color: white;
+}
+
+#main-menu .desktop-menu > a:hover {
+    color: gray;
+}
+
+#main-menu .desktop-menu > ul > li:first-child > a {
+    font-size: 0;
+    height: 38px;
+    padding-top: 4px;
+}
+
+#main-menu .desktop-menu > ul > li:first-child > a:before {
+    font-family: 'FontAwesome';
+    line-height: 1;
+    font-size: 30px;
+    content: "\f015";
+}
+
+#main-menu .desktop-menu > ul > li:first-child > a:after {
+    display: none;
+}
+
+#main-menu .desktop-menu > ul > li ul {
+    padding: 0px;
+    background-color: white;
+}
+
+#main-menu .desktop-menu > ul > li:hover ul li {
+    background-color: black;
+    margin-bottom: 1px;
+}
+.m-t-10 {
+    margin-top: 10px;
+}
+.form-edit-google-map {
+    width: 100%;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    height: 40px;
+    z-index: 10;
+}
+
+@media only screen and (min-width: 768px) {
+    .logo img {
+
+    }
+    .container {
+        padding: 0 5px;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .logo img {
+
+    }
+    .container {
+        width: 96%;
+        margin: 0px auto;
+    }
+}

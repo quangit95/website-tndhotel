@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<information>
+  <db>
+    <id>6</id>
+    <ti>
+      <vi>Ngôn Ngữ</vi>
+      <en>Language</en>
+    </ti>
+    <ti1>
+      <vi></vi>
+      <en></en>
+    </ti1>
+    <url>ngon-ngu</url>
+    <opl>class="change-language" data-copy-template="" data-view-template-local="true" data-view-template=".change-language" data-template-id="entryChangeLanguageUL"</opl>
+    <link></link>
+    <opp>1</opp>
+    <pa>0</pa>
+    <ct>
+      <vi></vi>
+      <en></en>
+    </ct>
+    <so>100</so>
+    <ism>1</ism>
+    <st>2</st>
+    <cr>1679297161</cr>
+  </db>
+</information>

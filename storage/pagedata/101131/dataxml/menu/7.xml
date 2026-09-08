@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<information>
+  <db>
+    <id>7</id>
+    <ti>
+      <vi>Tin sự kiện</vi>
+      <en>News &amp; Events</en>
+    </ti>
+    <ti1>
+      <vi></vi>
+      <en></en>
+    </ti1>
+    <url>tin-tuc</url>
+    <opl></opl>
+    <link></link>
+    <opp>2</opp>
+    <pa>0</pa>
+    <ct>
+      <vi></vi>
+      <en></en>
+    </ct>
+    <so>20</so>
+    <ism>0</ism>
+    <st>2</st>
+    <cr>1679805369</cr>
+    <cmf>1</cmf>
+  </db>
+</information>

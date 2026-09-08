@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<information>
+  <table>
+    <id_1>
+      <id>1</id>
+      <ti>
+        <vi>Deluxe With Window</vi>
+        <en>Deluxe With Window</en>
+      </ti>
+      <ti1>
+        <vi/>
+        <en/>
+      </ti1>
+      <ct>
+        <vi>Square 28 meters</vi>
+        <en>Square 28 meters</en>
+      </ct>
+      <tag/>
+      <cat>2</cat>
+      <pr>
+        <sale>0</sale>
+        <off/>
+      </pr>
+      <ra/>
+      <so>6</so>
+      <st>2</st>
+      <cr>1684553792</cr>
+      <im>1_a.JPG</im>
+    </id_1>
+    <id_2>
+      <id>2</id>
+      <ti>
+        <vi>Deluxe City View</vi>
+        <en>Deluxe City View</en>
+      </ti>
+      <ti1>
+        <vi/>
+        <en/>
+      </ti1>
+      <ct>
+        <vi/>
+        <en/>
+      </ct>
+      <tag/>
+      <cat>2</cat>
+      <pr>
+        <sale>0</sale>
+        <off/>
+      </pr>
+      <ra/>
+      <so>5</so>
+      <st>2</st>
+      <cr>1684553843</cr>
+      <im>2_TND- Deluxe city (2).jpg</im>
+    </id_2>
+    <id_3>
+      <id>3</id>
+      <ti>
+        <vi>Superior Room</vi>
+        <en>Superior Room</en>
+      </ti>
+      <ti1>
+        <vi/>
+        <en/>
+      </ti1>
+      <ct>
+        <vi/>
+        <en/>
+      </ct>
+      <tag/>
+      <cat>2</cat>
+      <pr>
+        <sale/>
+        <off/>
+      </pr>
+      <ra/>
+      <so>7</so>
+      <st>2</st>
+      <cr>1684553853</cr>
+      <im>3_TND -Superior (4).jpg</im>
+    </id_3>
+    <id_4>
+      <id>4</id>
+      <ti>
+        <vi>Premier Suite</vi>
+        <en>Premier Suite</en>
+      </ti>
+      <ti1>
+        <vi/>
+        <en/>
+      </ti1>
+      <ct>
+        <vi/>
+        <en/>
+      </ct>
+      <tag/>
+      <cat>2</cat>
+      <pr>
+        <sale>0</sale>
+        <off/>
+      </pr>
+      <ra/>
+      <so>3</so>
+      <st>2</st>
+      <cr>1684553862</cr>
+      <im>4_TND Premier suite (8).jpg</im>
+    </id_4>
+    <id_5>
+      <id>5</id>
+      <ti>
+        <vi>Penthouse Family</vi>
+        <en>Penthouse Family</en>
+      </ti>
+      <ti1>
+        <vi></vi>
+        <en></en>
+      </ti1>
+      <ct>
+        <vi></vi>
+        <en></en>
+      </ct>
+      <tag></tag>
+      <cat>2</cat>
+      <pr>
+        <sale></sale>
+        <off></off>
+      </pr>
+      <ra></ra>
+      <so>2</so>
+      <st>2</st>
+      <cr>1684553872</cr>
+      <im>5_TND-Penthouse Family (11).jpg</im>
+    </id_5>
+    <id_6>
+      <id>6</id>
+      <ti>
+        <vi>Royal King Gold</vi>
+        <en>Royal King Gold</en>
+      </ti>
+      <ti1>
+        <vi/>
+        <en/>
+      </ti1>
+      <ct>
+        <vi/>
+        <en/>
+      </ct>
+      <tag/>
+      <cat>2</cat>
+      <pr>
+        <sale>0</sale>
+        <off/>
+      </pr>
+      <ra/>
+      <so>1</so>
+      <st>2</st>
+      <cr>1684553882</cr>
+      <im>6_TND-ROYAL (13).jpg</im>
+    </id_6>
+    <id_7>
+      <id>7</id>
+      <ti>
+        <vi>Senior Deluxe Sea View</vi>
+        <en>Senior Deluxe Sea View</en>
+      </ti>
+      <ti1>
+        <vi/>
+        <en/>
+      </ti1>
+      <ct>
+        <vi/>
+        <en/>
+      </ct>
+      <tag/>
+      <cat>2</cat>
+      <pr>
+        <sale>0</sale>
+        <off/>
+      </pr>
+      <ra/>
+      <so>4</so>
+      <st>2</st>
+      <cr>1684555426</cr>
+      <im>7_TND-SENIOR (9).jpg</im>
+    </id_7>
+  </table>
+</information>

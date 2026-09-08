@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<information>
+  <table>
+    <id_1>
+      <st>1</st>
+      <mo>1</mo>
+      <ti>Deluxe With Window</ti>
+      <pid>1</pid>
+      <fn>Cường</fn>
+      <ph>0976247044</ph>
+      <em>cmhoang198@gmail.com</em>
+      <adult>1</adult>
+      <child/>
+      <dt>21-07-2023 11:30 AM - 23-07-2023 11:00 PM</dt>
+      <id>1</id>
+      <cr>1689740646</cr>
+    </id_1>
+    <id_2>
+      <st>1</st>
+      <mo>1</mo>
+      <ti>Senior Deluxe Sea View</ti>
+      <pid>7</pid>
+      <fn>C Thường</fn>
+      <ph>0968672336</ph>
+      <em>ltthuong.kttv@hunre.edu.vn</em>
+      <adult>2</adult>
+      <child>2</child>
+      <dt>15-06-2024 11:45 PM - 18-06-2024 11:45 PM</dt>
+      <id>2</id>
+      <cr>1715273195</cr>
+    </id_2>
+    <id_3>
+      <st>1</st>
+      <mo>1</mo>
+      <ti>Senior Deluxe Sea View</ti>
+      <pid>7</pid>
+      <fn>ĐÀO ÁNH DUONG</fn>
+      <ph>0912167180</ph>
+      <em>anhduongdaovn@gmail.com</em>
+      <adult>4</adult>
+      <child>2</child>
+      <dt>30-06-2024 01:45 PM - 02-07-2024 11:00 PM</dt>
+      <id>3</id>
+      <cr>1717224708</cr>
+    </id_3>
+    <id_4>
+      <st>1</st>
+      <mo>1</mo>
+      <ti>Royal King Gold</ti>
+      <pid>6</pid>
+      <fn>Phap</fn>
+      <ph>0944112199</ph>
+      <em>124phn@gmail.com</em>
+      <adult>2</adult>
+      <child/>
+      <dt>20-07-2024 08:49 AM - 20-07-2024 11:59 PM</dt>
+      <id>4</id>
+      <cr>1721440205</cr>
+    </id_4>
+    <id_5>
+      <st>1</st>
+      <mo>1</mo>
+      <ti>Royal King Gold</ti>
+      <pid>6</pid>
+      <fn>Phap test</fn>
+      <ph>0944112199</ph>
+      <em>124phn@gmail.com</em>
+      <adult>1</adult>
+      <child/>
+      <dt>20-07-2024 08:52 AM - 20-07-2024 11:59 PM</dt>
+      <id>5</id>
+      <cr>1721440379</cr>
+    </id_5>
+    <id_6>
+      <st>1</st>
+      <mo>1</mo>
+      <ti>Penthouse Family</ti>
+      <pid>5</pid>
+      <fn>Đức</fn>
+      <ph>0905706570</ph>
+      <em>ducplh@gmail.com</em>
+      <adult>3</adult>
+      <child/>
+      <dt>27-09-2024 02:00 PM - 29-09-2024 11:00 PM</dt>
+      <id>6</id>
+      <cr>1726470084</cr>
+    </id_6>
+    <id_7>
+      <st>1</st>
+      <mo>1</mo>
+      <ti>Superior Room</ti>
+      <pid>3</pid>
+      <fn>Minh</fn>
+      <ph>0934885288</ph>
+      <em>nguyenkieuhoiab@gmail.com</em>
+      <adult>2</adult>
+      <child>1</child>
+      <dt>24-10-2024 03:15 PM - 27-10-2024 11:00 PM</dt>
+      <id>7</id>
+      <cr>1728720878</cr>
+    </id_7>
+    <id_8>
+      <st>1</st>
+      <mo>1</mo>
+      <ti>Deluxe With Window</ti>
+      <pid>1</pid>
+      <fn>Nghĩa</fn>
+      <ph>0834900549</ph>
+      <em>nguyen.chinhnghia@smartresearch.vn</em>
+      <adult>-2</adult>
+      <child/>
+      <dt>19-12-2024 06:45 AM - 20-12-2024 11:00 PM</dt>
+      <id>8</id>
+      <cr>1733989091</cr>
+    </id_8>
+    <id_9>
+      <st>1</st>
+      <mo>1</mo>
+      <ti>Penthouse Family</ti>
+      <pid>5</pid>
+      <fn>Alejandro Ramos</fn>
+      <ph>0490506210</ph>
+      <em>alejandrora5050@gmail.com</em>
+      <adult>4</adult>
+      <child/>
+      <dt>01-07-2025 02:30 PM - 07-07-2025 11:00 PM</dt>
+      <id>9</id>
+      <cr>1740108340</cr>
+    </id_9>
+    <id_10>
+      <st>1</st>
+      <mo>1</mo>
+      <ti>Superior Room</ti>
+      <pid>3</pid>
+      <fn>Lê Kim Nga</fn>
+      <ph>0904844160</ph>
+      <em>lekimnga1960@gmail.com</em>
+      <adult>2</adult>
+      <child/>
+      <dt>05-03-2025 09:00 AM - 12-03-2025 09:00 AM</dt>
+      <id>10</id>
+      <cr>1741053750</cr>
+    </id_10>
+    <id_11>
+      <st>1</st>
+      <mo>1</mo>
+      <ti>Senior Deluxe Sea View</ti>
+      <pid>7</pid>
+      <fn>Trần thị hồng hạnh</fn>
+      <ph>0964253205</ph>
+      <em>namken13031985@gmail.com</em>
+      <adult>2</adult>
+      <child>2</child>
+      <dt>07-06-2025 03:40 PM - 07-06-2025 11:59 PM</dt>
+      <id>11</id>
+      <cr>1749285710</cr>
+    </id_11>
+  </table>
+</information>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<information>
+  <db>
+    <id>16</id>
+    <ti>
+      <vi>Đặt phòng</vi>
+      <en>Booking</en>
+    </ti>
+    <ti1>
+      <vi></vi>
+      <en></en>
+    </ti1>
+    <url>reservation</url>
+    <opl></opl>
+    <link></link>
+    <opp>5</opp>
+    <pa>0</pa>
+    <ct>
+      <vi></vi>
+      <en></en>
+    </ct>
+    <so>3</so>
+    <ism>1</ism>
+    <st>2</st>
+    <cr>1742433777</cr>
+  </db>
+  <meta>
+    <vi>
+      <title/>
+      <desc/>
+      <keyword/>
+      <topscript/>
+      <bottomscript>&lt;link type="text/css" rel="stylesheet" href="//book.securebookings.net/css/app-v1.css" /&gt;&lt;script type="text/javascript" src="//book.securebookings.net/js/v1/widget.all.js"&gt;&lt;/script&gt;&lt;script type="text/javascript" src="//book.securebookings.net/widgetCustomize?lang=vi&amp;widgetType=Widget&amp;id=fe1f1821-514b-1713882578-43ea-b85a-768c4d1dd6b5&amp;ajax=true"&gt;&lt;/script&gt;</bottomscript>
+    </vi>
+    <en>
+      <title/>
+      <desc/>
+      <keyword/>
+      <topscript/>
+      <bottomscript>&lt;link type="text/css" rel="stylesheet" href="//book.securebookings.net/css/app-v2.css" /&gt;&lt;script type="text/javascript" src="//book.securebookings.net/js/v2/widget.all.js"&gt;&lt;/script&gt; &lt;script type="text/javascript" src="//book.securebookings.net/widgetCustomize?lang=en&amp;widgetType=Widget&amp;id=fe1f1821-514b-1713882578-43ea-b85a-768c4d1dd6b5&amp;ajax=true"&gt;&lt;/script&gt;</bottomscript>
+    </en>
+  </meta>
+  <dateModified>1742434116</dateModified>
+  <more>
+    <vi>
+      <description/>
+      <contentCustom>&lt;div class="hbe-bws"&gt;&#13;
+&lt;section id="hbe-bws-page"&gt;&#13;
+&lt;div id="hbe-bws-wrapper"&gt;&lt;/div&gt;&#13;
+&lt;/section&gt;&#13;
+&lt;/div&gt;&#13;
+&lt;p class="clearfix"&gt;&amp;nbsp;&lt;/p&gt;</contentCustom>
+    </vi>
+    <en>
+      <description/>
+      <contentCustom>&lt;div class="hbe-bws"&gt;&#13;
+&lt;section id="hbe-bws-page"&gt;&#13;
+&lt;div id="hbe-bws-wrapper"&gt;&lt;/div&gt;&#13;
+&lt;/section&gt;&#13;
+&lt;/div&gt;&#13;
+&lt;p class="clearfix"&gt;&amp;nbsp;&lt;/p&gt;</contentCustom>
+    </en>
+    <isform>1</isform>
+  </more>
+</information>

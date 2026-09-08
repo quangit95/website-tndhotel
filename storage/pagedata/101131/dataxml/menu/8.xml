@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<information>
+  <db>
+    <id>8</id>
+    <ti>
+      <vi>Liên hệ</vi>
+      <en>Contact</en>
+    </ti>
+    <ti1>
+      <vi/>
+      <en>WHY STAY ANYWHERE ELSE</en>
+    </ti1>
+    <url>contact</url>
+    <opl/>
+    <link/>
+    <opp>1</opp>
+    <pa>0</pa>
+    <ct>
+      <vi/>
+      <en/>
+    </ct>
+    <so>50</so>
+    <ism>1</ism>
+    <st>2</st>
+    <cr>1684555658</cr>
+  </db>
+  <more>
+    <vi>
+      <description>&lt;div class="row"&gt;&#13;
+&lt;div class="col-xs-12 col-sm-6"&gt;&#13;
+&lt;p class="p1"&gt;TND Hotel is a luxury brand that is shaped by passion and dedication, bringing travelers all around the world a simple yet fulfilling indulgence which goes beyond standard and classiness.&lt;/p&gt;&#13;
+&lt;p class="p1"&gt;&amp;nbsp;&lt;/p&gt;&#13;
+&lt;ul class="ul1"&gt;&#13;
+&lt;li class="li1"&gt;&lt;span class="s2"&gt;Tel: 0258 3 822 999 - 0258 3 822 555&lt;/span&gt;&lt;/li&gt;&#13;
+&lt;li class="li2"&gt;&lt;span class="s4"&gt;Email: &lt;a href="mailto:info@tndhotelnhatrang.com"&gt;&lt;span class="s5"&gt;info@tndhotelnhatrang.com&lt;/span&gt;&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&#13;
+&lt;li class="li1"&gt;&lt;span class="s2"&gt;Địa chỉ: 07 L&amp;ecirc; Lợi, Phường Nha Trang, Tỉnh Kh&amp;aacute;nh H&amp;ograve;a, Việt Nam &lt;br /&gt;07 Le Loi, Nha Trang Ward, Khanh Hoa Province, Vietnam&lt;/span&gt;&lt;/li&gt;&#13;
+&lt;li class="li2"&gt;&lt;span class="s4"&gt; Link facebook: &lt;span class="s5"&gt;&lt;a href="https://www.facebook.com/tndhotelnhatrang/?ref=bookmarks"&gt;https://www.facebook.com/tndhotelnhatrang/?ref=bookmarks&lt;/a&gt;&lt;/span&gt;&lt;/span&gt;&lt;/li&gt;&#13;
+&lt;/ul&gt;&#13;
+&lt;/div&gt;&#13;
+&lt;div class="col-xs-12 col-sm-6"&gt;&#13;
+&lt;div data-copy-template="" data-get-url="/api/get/model" data-params="mod=site&amp;amp;node=contact" data-view-template=".form-contact-info-home" data-template-id="entryFormElement"&gt;&#13;
+&lt;div class="form-contact-info-home"&gt;&amp;nbsp;&lt;/div&gt;&#13;
+&lt;/div&gt;&#13;
+&lt;/div&gt;&#13;
+&lt;/div&gt;&#13;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;&#13;
+&lt;div id="eJOY__extension_root" class="eJOY__extension_root_class"&gt;&lt;/div&gt;</description>
+      <contentCustom></contentCustom>
+    </vi>
+    <en>
+      <description>&lt;div class="row"&gt;&#13;
+&lt;div class="col-xs-12 col-sm-6"&gt;&#13;
+&lt;p class="p1"&gt;TND Hotel is a luxury brand that is shaped by passion and dedication, bringing travelers all around the world a simple yet fulfilling indulgence which goes beyond standard and classiness.&lt;/p&gt;&#13;
+&lt;ul class="ul1"&gt;&#13;
+&lt;li class="li1"&gt;&lt;span class="s2"&gt;Tel: 0258 3 822 999 - 0258 3 822 555&lt;/span&gt;&lt;/li&gt;&#13;
+&lt;li class="li2"&gt;&lt;span class="s4"&gt;Email:&amp;nbsp;&lt;a href="mailto:info@tndhotelnhatrang.com"&gt;&lt;span class="s5"&gt;info@tndhotelnhatrang.com&lt;/span&gt;&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&#13;
+&lt;li class="li1"&gt;&lt;span class="s2"&gt;Address: 07 Le Loi, Nha Trang Ward, Khanh Hoa Province, Vietnam&lt;br /&gt;Địa chỉ: 07 L&amp;ecirc; Lợi, Phường Nha Trang, Tỉnh Kh&amp;aacute;nh H&amp;ograve;a, Việt Nam&lt;/span&gt;&lt;/li&gt;&#13;
+&lt;li class="li2"&gt;&lt;span class="s4"&gt;Link facebook:&amp;nbsp;&lt;span class="s5"&gt;&lt;a href="https://www.facebook.com/tndhotelnhatrang/?ref=bookmarks"&gt;https://www.facebook.com/tndhotelnhatrang/?ref=bookmarks&lt;/a&gt;&lt;/span&gt;&lt;/span&gt;&lt;/li&gt;&#13;
+&lt;/ul&gt;&#13;
+&lt;/div&gt;&#13;
+&lt;div class="col-xs-12 col-sm-6"&gt;&#13;
+&lt;div data-copy-template="" data-get-url="/api/get/model" data-params="mod=site&amp;amp;node=contact" data-view-template=".form-contact-info-home" data-template-id="entryFormElement"&gt;&#13;
+&lt;div class="form-contact-info-home"&gt;&amp;nbsp;&lt;/div&gt;&#13;
+&lt;/div&gt;&#13;
+&lt;/div&gt;&#13;
+&lt;/div&gt;&#13;
+&lt;div id="eJOY__extension_root" class="eJOY__extension_root_class"&gt;&lt;/div&gt;</description>
+      <contentCustom></contentCustom>
+    </en>
+  </more>
+  <dateModified>1686794476</dateModified>
+</information>

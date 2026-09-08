@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<information>
+  <db>
+    <id>4</id>
+    <ti>
+      <vi>Đặt phòng</vi>
+      <en>booking</en>
+    </ti>
+    <ti1>
+      <vi></vi>
+      <en></en>
+    </ti1>
+    <url>dat-phong</url>
+    <opl></opl>
+    <link></link>
+    <opp>1</opp>
+    <pa>0</pa>
+    <ct>
+      <vi></vi>
+      <en></en>
+    </ct>
+    <so>7</so>
+    <ism>0</ism>
+    <st>2</st>
+    <cr>1676963717</cr>
+    <cmf>1</cmf>
+    <clc>rectangle2</clc>
+    <clr></clr>
+    <ps>1</ps>
+    <itemTemplate></itemTemplate>
+  </db>
+</information>

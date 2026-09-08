@@ -1,0 +1,488 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<information>
+  <db>
+    <uid>1</uid>
+    <id>101131</id>
+    <name>TND Hotel</name>
+    <cid>11</cid>
+    <phone>090909090</phone>
+    <address>07 Lê Lợi, Phường Nha Trang, Tỉnh Khánh Hòa, Việt Nam</address>
+    <city>56</city>
+    <district>568</district>
+    <url>http://tndhotelnhatrang.com</url>
+    <created>1684469717</created>
+    <devid>1</devid>
+    <status>2</status>
+    <exp>2026-06-23</exp>
+    <capacity>300</capacity>
+    <im>101131_tnd-hotel.png</im>
+  </db>
+  <login>
+    <username>admin</username>
+    <password>e64b78fc3bc91bcbc7dc232ba8ec59e0</password>
+  </login>
+  <template>
+    <code>commonpage</code>
+    <language>vi</language>
+    <develop>1</develop>
+    <clr></clr>
+    <tmpItemProduct></tmpItemProduct>
+    <customPageProduct>{3}&#13;
+&lt;div class="space space-to-fix-product"&gt;&lt;/div&gt;&#13;
+&lt;div class="product-detail-layout"&gt;&#13;
+    &lt;div class="product-sidebar booking-item-info" data-fixed-class="sidebar-fixed" data-fixed=".space-to-fix-product,#header" data-fixed-stop=".space-end-product-layout,#product-more"&gt;&#13;
+        &lt;div class="info"&gt;&#13;
+            {4}&#13;
+        &lt;/div&gt;&#13;
+       &lt;div class="hidden-xs"&gt;&#13;
+        &lt;div class="form-booking"&gt;{21}&lt;/div&gt;&#13;
+        &lt;div class="block-product-btn-buy" data-copy-template data-view-template-local="true" data-view-template=".block-product-btn-buy" data-template-id="entryProductDetailButtonShare"&gt;&lt;/div&gt; {9} &lt;/div&gt;&#13;
+    &lt;/div&gt;&#13;
+    &lt;div class="product-detail"&gt;&#13;
+        {12} &lt;div class="hidden-sm hidden-md hidden-lg"&gt;&lt;div class="form-booking"&gt;{21}&lt;/div&gt;&lt;/div&gt;&#13;
+        &lt;div class="description"&gt;{10}{18}{19}{11}{13}{14}&lt;/div&gt;&#13;
+    &lt;/div&gt;&#13;
+&lt;/div&gt;&#13;
+&lt;div class="space-end-product-layout"&gt;&lt;/div&gt;&#13;
+&lt;div class="clearfix"&gt;&lt;/div&gt;&#13;
+{15}{16}{17}</customPageProduct>
+    <tmpItemBlog></tmpItemBlog>
+    <customPageBlog></customPageBlog>
+    <websiteAttr></websiteAttr>
+    <minImage>2</minImage>
+  </template>
+  <language>
+    <id>
+      <vi>Việt Nam</vi>
+      <en>English</en>
+    </id>
+  </language>
+  <script>
+    <headelm/>
+    <css>@import url('https://fonts.googleapis.com/css2?family=Monda:wght@400;700&amp;display=swap');&#13;
+.website { font-family: 'Monda', sans-serif; }&#13;
+&#13;
+@keyframes ring2 {&#13;
+    0% {&#13;
+        -webkit-transform: rotate(0) scale(1) skew(1deg);&#13;
+        transform: rotate(0) scale(1) skew(1deg)&#13;
+    }&#13;
+&#13;
+    10% {&#13;
+        -webkit-transform: rotate(-25deg) scale(1) skew(1deg);&#13;
+        transform: rotate(-25deg) scale(1) skew(1deg)&#13;
+    }&#13;
+&#13;
+    20% {&#13;
+        -webkit-transform: rotate(25deg) scale(1) skew(1deg);&#13;
+        transform: rotate(25deg) scale(1) skew(1deg)&#13;
+    }&#13;
+&#13;
+    30% {&#13;
+        -webkit-transform: rotate(-25deg) scale(1) skew(1deg);&#13;
+        transform: rotate(-25deg) scale(1) skew(1deg)&#13;
+    }&#13;
+&#13;
+    40% {&#13;
+        -webkit-transform: rotate(25deg) scale(1) skew(1deg);&#13;
+        transform: rotate(25deg) scale(1) skew(1deg)&#13;
+    }&#13;
+&#13;
+    50% {&#13;
+        -webkit-transform: rotate(0) scale(1) skew(1deg);&#13;
+        transform: rotate(0) scale(1) skew(1deg)&#13;
+    }&#13;
+&#13;
+    100% {&#13;
+        -webkit-transform: rotate(0) scale(1) skew(1deg);&#13;
+        transform: rotate(0) scale(1) skew(1deg)&#13;
+    }&#13;
+}&#13;
+&#13;
+.hotline-bar {&#13;
+    position: fixed; bottom:27px; right:20px;&#13;
+    background: #d8a72c;&#13;
+    width: 180px; height:35px; line-height:35px;&#13;
+    border-radius: 10px; z-index:-1; padding-left:10px; font-weight:bold; &#13;
+}&#13;
+.hotline-bar a { font-size:16px; color:#FFF; }&#13;
+.fix-icon-support { position: fixed; right: 10px; bottom: 20px; width: 50px; z-index:10; }&#13;
+.fix-icon-support .icon-sp { display:block;}&#13;
+.fix-icon-support .icon-sp + .icon-sp { margin-top:10px;}&#13;
+.fix-icon-support .icon-sp img { width:50px; }&#13;
+.fix-icon-support .icon-zalo img {&#13;
+    -webkit-animation: ring2  1s infinite ease-in-out;&#13;
+    animation: ring2 1s infinite ease-in-out;&#13;
+    -webkit-transform-origin: 50% 50%;&#13;
+    -ms-transform-origin: 50% 50%;&#13;
+    transform-origin: 50% 50%&#13;
+}&#13;
+.fix-icon-support .icon-sp.icon-phone img {&#13;
+    background-color: #d8a72c;&#13;
+    border: 1px solid #d8a72c;&#13;
+    border-radius: 50%;&#13;
+}&#13;
+.item-view-landing-page .item-img-icon { margin: 0 -10px;}&#13;
+.item-view-landing-page .item-img-icon .item { padding:0 10px;}&#13;
+.logo img { width:126px; }&#13;
+.has-fixed .logo img { width:108px; margin:5px; }&#13;
+.space-header {&#13;
+    height: 1px;&#13;
+}&#13;
+.form-control.has-calendar-icon {&#13;
+    padding-left: 40px;&#13;
+}&#13;
+#main-menu .mobile-menu&gt;ul&gt;li&gt;a {&#13;
+    color: #dfb339;&#13;
+}&#13;
+#header .icon-menu { color:#000; }&#13;
+#header { background-color: #FFF; }&#13;
+&#13;
+.has-fixed #header {&#13;
+    position: fixed;&#13;
+    top: 0;&#13;
+    width: 100%;&#13;
+    background-color: #FFF;&#13;
+}&#13;
+.bg-full-width {&#13;
+  width: 100vw;&#13;
+  position: relative;&#13;
+  left: 50%;&#13;
+  right: 50%;&#13;
+  margin-left: -50vw;&#13;
+  margin-right: -50vw;&#13;
+  overflow: hidden;&#13;
+}&#13;
+.bg-1 { background-color:#f9f9e7;}&#13;
+.bg-2 { background-color:#60504b;}&#13;
+.bg-2 .btn-more { color:#e3d0bc; border:1px solid; border-radius:5px; padding:5px 10px; display:inline-block;}&#13;
+.bg-2 .btn-more:hover { color:#FFF;}&#13;
+.bg-2 .title { color:#e3d0bc; }&#13;
+.bg-3 { background-color:#efebe4;}&#13;
+.title1 { text-align:center; margin: 30px 0; color: #d8a72c;}&#13;
+.title1 img { width:320px; }&#13;
+.title { text-align:left; padding: 10px 0; }&#13;
+.title-name { font-size:44px; font-weight:normal; position:relative; padding-bottom:10px;}&#13;
+.title-name:after { content: " "; display:block; width:142px; height:1px; position:absolute; bottom:0; left:0; border-bottom:1px solid; }&#13;
+.title&gt;* { background-color:unset; padding:unset; color:#d8a72c;}&#13;
+.item-view-landing-page-slide .slick-list { margin-left:-10px;}&#13;
+.info h1 { color:#d8a72c;}&#13;
+.btn-sendinquery { background-color:#f5b158; color:#FFF; }&#13;
+.btn-sendinquery:before, .btn-call:before { padding-right:5px;}&#13;
+.fa-long-arrow-right:before {&#13;
+    content: "\f178";&#13;
+}&#13;
+.ffa:before {&#13;
+    font-family: FontAwesome;&#13;
+}&#13;
+.f-contact { position:relative; padding: 30px 0; margin: 30px 0 50px;}&#13;
+.f-contact:after { content:" "; height:1px; position:absolute; bottom:0px; left:50%; width:300px; margin-left:-150px; background-color: #60504b; }&#13;
+.f-contact a { font-weight:bold; }&#13;
+.f-content { padding: 20px; }&#13;
+.newsletter-form { margin:20px 0; position:relative; width:320px;}&#13;
+.btn-newsletter { position:absolute; right:0; top:0; width:90px; height:100%; background-color:#d8a72c; border:none; color:#FFF; border-radius: 0 5px 5px 0;}&#13;
+.blog-slide-content { background-color:#FFF; }&#13;
+.blog-slide-content-info { height:188px; padding: 10px; }&#13;
+a.blog-item-title { height: 45px; }&#13;
+.blog-slide-content-info &gt; p { height: 94px; overflow:hidden; }&#13;
+.social-icons { padding: 10px 0;}&#13;
+.social-icons a { display:inline-block; border-radius:50%; height:40px; width:40px; line-height:40px; border: 1px solid; color:#000; text-align:center; margin: 5px;}&#13;
+.fa-youtube-play:before {&#13;
+    content: "\f16a";&#13;
+}&#13;
+.form-booking-info {&#13;
+    padding: 20px;&#13;
+}&#13;
+.item-view-slide-image-product .img figure,&#13;
+.item-detail-infomation .list-image-detail .img figure {&#13;
+    padding-top: 0px;&#13;
+}&#13;
+.item-view-slide-image-product .img figure a,&#13;
+.item-detail-infomation  .list-image-detail .img figure a {&#13;
+    position: relative;&#13;
+    display: block;&#13;
+}&#13;
+&#13;
+.change-language ol li { float:left; list-style:none; margin-left:5px;}&#13;
+#main-menu .mobile-menu &gt; ul .change-language ol li a { height:unset; }&#13;
+.change-language ol { padding:0; margin:0; }&#13;
+.change-language ol:after { display:block; clear:both; content: "" ;}&#13;
+.p-sale { font-weight:bold; }&#13;
+#footer { font-size:14px; background-color:#f5f1ee; }&#13;
+@media (min-width: 768px)  {&#13;
+    #main-menu .desktop-menu&gt;ul&gt;li&gt;a {color:#000;  text-transform:uppercase;  }&#13;
+    #main-menu .desktop-menu&gt;ul&gt;li&gt;a:hover, #main-menu .desktop-menu&gt;ul&gt;li.active&gt;a { color:#d8a72c; }&#13;
+    #main-menu .desktop-menu&gt;ul&gt;li:hover ul.sub-menu a { background-color: #d8a72c;}&#13;
+    .home-page #header { position: absolute;  left: 0; width: 100%;  background-color: unset; }&#13;
+    .has-fixed.home-page #header { position: fixed; background-color: #FFF; }&#13;
+    .title { font-size:40px; }&#13;
+    .f-content { padding: 40px; }&#13;
+    .language-style { width:120px; position:relative; height:22px; }&#13;
+    .change-language ol { width:100%; position:absolute; top:0px; left:0;}&#13;
+.form-booking-info {&#13;
+    padding: 40px;&#13;
+}&#13;
+#main-menu { margin-top:40px; }&#13;
+.has-fixed #main-menu { margin-top:30px;}&#13;
+#main-menu .desktop-menu &gt; ul {   display: -moz-flex; display: -ms-flex; display: flex;  align-items: flex-start;   justify-content: flex-start; flex-wrap: wrap; text-align:center; }&#13;
+#main-menu .desktop-menu &gt; ul &gt; li { list-style:none; flex-grow: 1; }&#13;
+#main-menu .root-c &gt; a { margin:0 5px;&#13;
+    color: white; padding: 4px 0px; &#13;
+    height: inherit;&#13;
+    vertical-align: middle;&#13;
+    display: table-cell;&#13;
+    display: inline-block;&#13;
+    border-bottom: 1px solid transparent;&#13;
+    border-top: 1px solid transparent; &#13;
+}&#13;
+.desktop-menu&gt;ul&gt;li&gt;a:before { display:none; } &#13;
+#main-menu .root-c &gt; a {&#13;
+    margin: 0 10px;&#13;
+    padding: 8px 0px;&#13;
+    font-size: 14px;&#13;
+    text-transform: uppercase;&#13;
+}&#13;
+&#13;
+.product-detail-layout { padding-right: 34%;  position: relative; }&#13;
+    .product-sidebar {  margin-left: 10px;  position: absolute; right: 0px; width: 33%;  background-color: #FFF; }&#13;
+    .product-detail-layout .sidebar-fixed {  position: fixed;  z-index: 10; top: 75px;  left: 66%;  width: 32%; }&#13;
+&#13;
+}&#13;
+@media only screen and (min-width: 1080px) {&#13;
+    .item-odd-even .item-od-content { width:860px; margin:0 auto;}&#13;
+    .item-odd-even:nth-child(odd) { background-color:#ffe8d4; }&#13;
+    .item-odd-even:nth-child(even) .col-left  { float:right;}&#13;
+    .form-booking-info { padding: 40px;}&#13;
+    .form-booking-info-home { width:480px;}&#13;
+}&#13;
+@media only screen and (min-width: 1280px) {&#13;
+    .product-detail-layout .sidebar-fixed { width: 370px; left:64%; }&#13;
+}</css>
+    <javascript>&lt;script&gt;&#13;
+languageText.maxsizeImage = 1500000;&#13;
+languageText.maxsizeImageProduct = 100000;&#13;
+&lt;/script&gt;&#13;
+&lt;script id="entryProductInMenu" type="text/x-handlebars-template"&gt;&#13;
+{{#each i}}&#13;
+&lt;li&gt;&lt;a href="/{{../d.l10n.languageCode}}/{{../d.l10n.urlProduct}}/{{urlFriendly this.ti this.id ../d.l10n.languageCode}}"&gt;{{lookup this.ti ../d.l10n.languageCode}}&lt;/a&gt;&lt;/li&gt;&#13;
+{{/each}}&#13;
+&lt;/script&gt;&#13;
+&lt;script id="entryNewsletterSignup" type="text/x-handlebars-template"&gt;&#13;
+    &lt;form class="post-form form-horizontal"&gt;&#13;
+    &lt;div class="hiddens"&gt;&#13;
+        &lt;input type="hidden" name="db.cr" value="{{d.l10n.timeserver}}"&gt;&#13;
+        &lt;input type="hidden" name="updateNode" value="db" data-validate="" data-required="{{d.l10n.requireInput}}"&gt;&#13;
+        &lt;input type="hidden" name="model" value="newsletter"&gt;&#13;
+    &lt;/div&gt;&#13;
+    &lt;div class="newsletter-form"&gt;&#13;
+        &lt;input name="db.em" type="input" value="" class="form-control" data-validate="" data-hidden-message="true" data-required="{{d.l10n.requireInput}}" placeholder="Đăng ký email nhận ưu đãi" data-pattern="^[\w._%+-]{2,}@[\w.-]{1,}\.[\w]{2,}$" data-pattern-message="Địa chỉ mail chưa hợp lệ"&gt; &lt;span class="error"&gt;&lt;/span&gt;&#13;
+        &lt;button type="" data-button-magic="" data-format-json="true" data-params-form=".post-form" data-ajax-url="/api/post/newplugin?strsms=Chúc&amp;nbsp;Mừng&amp;nbsp;Bạn&amp;nbsp;Đăng&amp;nbsp;Ký&amp;nbsp;Thành&amp;nbsp;Công" data-show-success=".alert-footer.alert" data-show-errors=".alert-footer.alert-error" class="btn-newsletter"&gt;&lt;span&gt;{{d.l10n.signup}}&lt;/span&gt; &lt;/button&gt;&#13;
+    &lt;/div&gt;&#13;
+&lt;/form&gt;&#13;
+&lt;/script&gt;&#13;
+&#13;
+&lt;script id="entryFormTestDriveNopopup" type="text/x-handlebars-template"&gt;&#13;
+    &lt;div class="e-info"&gt;{{{e.info}}}&lt;/div&gt;&#13;
+    &lt;form class="post-form form-horizontal"&gt;&#13;
+        &lt;div class="hiddens"&gt;&#13;
+            &lt;input type="hidden" name="updateNode" value="db"&gt;&#13;
+            &lt;input type="hidden" name="db.st" value="1"&gt; &lt;/div&gt;&#13;
+            &lt;input type="hidden" name="db.me" value="{{e.title}}"&gt;&#13;
+        &lt;div class="row form-group "&gt;&#13;
+            &lt;label class="col-xs-12 col-sm-12"&gt; &lt;/label&gt;&#13;
+            &lt;div class="col-xs-12 col-sm-12"&gt;&#13;
+                &lt;div class="row"&gt;&#13;
+                    &lt;div class="col-xs-12 col-sm-6 mb-10"&gt;&#13;
+                        &lt;label class="l-ingroup"&gt;Rooms&lt;/label&gt;&#13;
+                        &lt;select name="db.su"&#13;
+                          class="form-control"&#13;
+                          data-validate=""&#13;
+                          data-dropdown=""&#13;
+                          data-required="{{d.l10n.requireInput}}"&#13;
+                          data-index-value="{{#if e.select}}{{e.select}}{{else}}{{d.l10n.jsonProductIndex.ti}}{{/if}}"&#13;
+                          data-str-key="ti"&#13;
+                          data-str-value="ti"&#13;
+                          data-option-from-json="/api/get/product?st_g=1&amp;sort=ASC&amp;titleNoObj=1"&#13;
+                          data-local-optiona="localProductList"&#13;
+                          data-object-init='{"id":"", "ti":"Type of room"}'&gt;&lt;/select&gt;&#13;
+                        &lt;span class="error"&gt;&lt;/span&gt;&#13;
+                    &lt;/div&gt;&#13;
+                    &lt;div class="col-xs-6 col-sm-3 mb-10"&gt;&#13;
+                        &lt;label class="l-ingroup"&gt;{{d.l10n.date}}&lt;/label&gt;&#13;
+                        &lt;input name="db.tbook.date"&#13;
+                            type="input"&#13;
+                            value=""&#13;
+                            class="form-control"&#13;
+                            data-validate=""&#13;
+                            data-required="{{d.l10n.requireInput}}"&#13;
+                            data-date-picker=""&#13;
+                            data-format="DD-MM-YYYY"&#13;
+                            data-single-date-picker="true"&#13;
+                            data-show-week-numbers="false"&#13;
+                            data-invalid-dates="1,2"&#13;
+                            data-end-date-plus="21,days"&#13;
+                            data-opens="right"&gt;&#13;
+                            &lt;span class="error"&gt;&lt;/span&gt;&#13;
+                        &lt;/div&gt;&#13;
+                    &lt;div class="col-xs-6 col-sm-3 mb-10"&gt;&#13;
+                        &lt;label class="l-ingroup"&gt;{{d.l10n.hour}}&lt;/label&gt;&#13;
+                        &lt;select name="db.tbook.hour"&#13;
+                          class="form-control"&#13;
+                          data-dropdown=""&#13;
+                          data-required="require"&#13;
+                          data-index-value=""&#13;
+                          data-local-optiona="timeH"&#13;
+                          data-object-init='{"id":", "ti":"Hours"}'&gt;&#13;
+                        &lt;/select&gt;&#13;
+                        &lt;span class="error"&gt;&lt;/span&gt;&#13;
+                    &lt;/div&gt;&#13;
+                &lt;/div&gt;&#13;
+            &lt;/div&gt;&#13;
+        &lt;/div&gt;&#13;
+        &lt;div class="row form-group "&gt;&#13;
+            &lt;label class="col-xs-12 col-sm-12"&gt;{{d.l10n.fullname}}&lt;/label&gt;&#13;
+            &lt;div class="col-xs-12 col-sm-12"&gt;&#13;
+                &lt;input name="db.fn"&#13;
+                    type="input" value=""&#13;
+                    class="form-control"&#13;
+                    data-validate=""&#13;
+                    data-required="{{d.l10n.requireInput}}"&#13;
+                    placeholder=""&gt;&#13;
+                &lt;span class="error"&gt;&lt;/span&gt;&#13;
+                &lt;/div&gt;&#13;
+        &lt;/div&gt;&#13;
+        &lt;div class="row form-group "&gt;&#13;
+            &lt;label class="col-xs-12 col-sm-12"&gt;{{d.l10n.yourNumber}}&lt;/label&gt;&#13;
+            &lt;div class="col-xs-12 col-sm-12"&gt;&#13;
+                &lt;input name="db.ph"&#13;
+                    type="input"&#13;
+                    value=""&#13;
+                    class="form-control"&#13;
+                    data-validate=""&#13;
+                    data-required="{{d.l10n.requireInput}}"&#13;
+                    data-pattern="^{{d.l10n.requirePhonePattern}}"&#13;
+                    data-min-length="9"&#13;
+                    data-max-length="13"&#13;
+                    data-pattern-message="{{d.l10n.requirePhoneRule}}"&#13;
+                    placeholder=""&gt;&#13;
+                &lt;span class="error"&gt;&lt;/span&gt;&#13;
+            &lt;/div&gt;&#13;
+        &lt;/div&gt;&#13;
+        &lt;div class="row form-group"&gt;&#13;
+            &lt;div class="col-xs-6 col-sm-4  text-right transparent-input-b"&gt;&#13;
+                &lt;button type=""&#13;
+                    data-button-magic&#13;
+                    data-format-json="true"&#13;
+                    data-params-form=".post-form"&#13;
+                    data-ajax-url="/api/post/contactus"&#13;
+                    data-show-success=".alert-footer.alert"&#13;
+                    data-show-errors=".alert-footer.alert-error"&#13;
+                    class="btn btn-block btn-primary text-uppercase"&#13;
+                    data-empty-object="[data-quick-view-item]"&gt;&lt;span&gt;{{d.l10n.btnSend}}&lt;/span&gt; &lt;/button&gt;&#13;
+            &lt;/div&gt;&#13;
+            &lt;div class="col-xs-6 col-sm-4"&gt;&#13;
+                &lt;button type=""&#13;
+                    class="btn btn-block btn-default text-uppercase"&#13;
+                    data-closet-toggle-class="in"&#13;
+                    data-object=".modal"&#13;
+                    data-empty-object="[data-quick-view-item]"&gt;&lt;span&gt;{{d.l10n.btnCancel}}&lt;/span&gt; &lt;/button&gt;&#13;
+            &lt;/div&gt;&#13;
+        &lt;/div&gt;&#13;
+    &lt;/form&gt;&#13;
+&lt;/script&gt;&#13;
+&lt;script id="entryViewProduct" type="text/x-handlebars-template"&gt;&#13;
+    &lt;div class="item item-product-st-{{i.st}}" {{#if d.l10n.informationWebsite.schema}} itemprop="itemListElement" itemscope="" itemtype="https://schema.org/Product" {{/if}}&gt;&#13;
+    &lt;div class="item-info"&gt;&#13;
+        &lt;div class="img"&gt;&#13;
+            {{#if i.pr.off}}&#13;
+            &lt;span class="sale-percent"&gt;{{{calculator i.pr.sale '%%' i.pr.off}}}%&lt;/span&gt;&#13;
+            {{/if}}&#13;
+            &lt;figure&gt;&#13;
+                &lt;a href="/{{d.l10n.languageCode}}/{{d.l10n.urlProduct}}/{{urlFriendly i.ti i.id d.l10n.languageCode}}" class="i-center"&gt;&#13;
+                {{#if i.im}}&#13;
+                &lt;img alt="{{lookup i.ti d.l10n.languageCode}}" data-img="/{{d.l10n.folderImageProduct}}{{i.im}}" src="{{d.l10n.urlOfWebsite}}/img/style/transparent.png" class="image-load" itemprop="image"&gt;&#13;
+                {{else}}&#13;
+                    &lt;img alt="transparent" src="{{d.l10n.urlOfWebsite}}/img/style/transparent.png" itemprop="image"&gt;&#13;
+                {{/if}}&#13;
+                &lt;/a&gt;&#13;
+            &lt;/figure&gt;&#13;
+        &lt;/div&gt;&#13;
+        &lt;div class="info"&gt;&#13;
+            &lt;div class="init-none rating-style rating-{{#if r.ra}}{{i.ra}}{{else}}4{{/if}}"&gt;&lt;/div&gt;&#13;
+            &lt;div itemprop="brand" itemtype="https://schema.org/Brand" itemscope&gt;&#13;
+                &lt;meta itemprop="name" content="{{#if i.pbr}}{{{textFromDropdownLocal i.pbr 'productBrand' 'id' 'ti' 'true'}}}{{else}}{{d.l10n.informationWebsite.db.name}}{{/if}}" /&gt;&#13;
+            &lt;/div&gt;&#13;
+            &lt;div class="p-text-info"&gt;&#13;
+                &lt;p class="p-name"&gt;&#13;
+                    &lt;a href="/{{d.l10n.languageCode}}/{{d.l10n.urlProduct}}/{{urlFriendly i.ti i.id d.l10n.languageCode}}" itemprop="url"&gt;&lt;span itemprop="name"&gt;{{lookup i.ti d.l10n.languageCode}}&lt;/span&gt;&lt;/a&gt;&#13;
+                &lt;/p&gt;&#13;
+            &lt;/div&gt;&#13;
+            &lt;div class="price" itemprop="offers" itemscope itemtype="https://schema.org/Offer"&gt;&#13;
+                &lt;p&gt;&#13;
+                    {{#if i.pr.sale}}&#13;
+                    {{#if i.pr.off}}&#13;
+                    &lt;span class="p-off"&gt;{{{ formatCurrency i.pr.sale d.l10n.currencyPosition d.l10n.currencyFormat}}}&lt;/span&gt;&#13;
+                    &lt;span class="p-sale"&gt;{{{ formatCurrency i.pr.off d.l10n.currencyPosition d.l10n.currencyFormat}}}&lt;/span&gt;&#13;
+                    &lt;span class="init-none" itemprop="price"&gt;{{i.pr.off}}&lt;/span&gt;&#13;
+                    {{else}}&#13;
+                    {{#xif " this.i.pr.sale==0"}}&#13;
+                    &lt;span&gt;{{d.l10n.contactPrice}}&lt;/span&gt;&#13;
+                    &lt;span itemprop="price" class="init-none"&gt;0&lt;/span&gt;&#13;
+                    {{/xif}}&#13;
+                    {{#xif " this.i.pr.sale&gt;0"}}&#13;
+                    &lt;span class="p-sale"&gt;{{{ formatCurrency i.pr.sale d.l10n.currencyPosition d.l10n.currencyFormat}}}&lt;/span&gt;&#13;
+                    &lt;span class="init-none" itemprop="price"&gt;{{i.pr.sale}}&lt;/span&gt;&#13;
+                    {{/xif}}&#13;
+                    {{/if}}&#13;
+                    {{else}}&#13;
+                    &lt;span&gt;{{d.l10n.contactPrice}}&lt;/span&gt;&#13;
+                    &lt;span itemprop="price" class="init-none"&gt;0&lt;/span&gt;&#13;
+                    {{/if}}&#13;
+                    &lt;span class="init-none" itemprop="priceCurrency"&gt;VND&lt;/span&gt;&#13;
+                    &lt;link itemprop="url" href="/{{d.l10n.urlProduct}}/{{urlFriendly i.ti i.id}}" /&gt;&#13;
+                    &lt;meta itemprop="availability" content="https://schema.org/InStock" /&gt;&#13;
+                    &lt;meta itemprop="priceValidUntil" content="{{d.l10n.nextYearMonthDay}}" /&gt;&#13;
+                &lt;/p&gt;&#13;
+            &lt;/div&gt;&#13;
+            &lt;div class="row"&gt;&#13;
+                &lt;div class="col-xs-6"&gt;&#13;
+                    {{#xif ' this.i.st==100 '}}&#13;
+                    &lt;span class="btn btn-sm btn-buy btn-buy-one btn-disabled" disabled="disabled"&gt;Tạm hết&lt;/span&gt;&#13;
+                    {{else}}&#13;
+                    &lt;a class="ffa fa-envelope-o btn btn-block btn-sm btn-sendinquery" href="/{{d.l10n.languageCode}}/reservation" data-button-magics="" data-elm-data='{"title":"Send Inquiry","select":"{{lookup i.ti d.l10n.languageCode}}"}' data-view-template-local="true" data-option-local="jsonProductIndex" data-view-template="[data-quick-view-item]" data-template-id="entryFormTestDrive"&gt;Booking&lt;/a&gt;&#13;
+                    {{/xif}}&#13;
+                &lt;/div&gt;&#13;
+                &lt;div class="col-xs-6"&gt;&#13;
+                    &lt;a class="ffa fa-phone-square btn btn-block btn-sm btn-default btn-call" href="/{{d.l10n.languageCode}}/contact"&gt;&lt;strong&gt;{{d.l10n.contact}}&lt;/strong&gt;&lt;/a&gt;&#13;
+                &lt;/div&gt;&#13;
+            &lt;/div&gt;&#13;
+        &lt;/div&gt;&#13;
+    &lt;/div&gt;&#13;
+&lt;/div&gt;&#13;
+&lt;/script&gt;&#13;
+&lt;script id="entryChangeLanguageUL" type="text/x-handlebars-template"&gt;&#13;
+&lt;div class="language-style"&gt;&#13;
+    &lt;ol class="language-select"&gt;&#13;
+        {{#if d.l10n.jsonChangeLanguage}}&#13;
+            {{#if d.l10n.jsonChangeLanguage.url}}&#13;
+                {{#each d.l10n.multiLanguage}}&#13;
+                    &lt;li class="flag flag-{{@key}}"&gt;&lt;a href="/{{@key}}/{{../d.l10n.jsonChangeLanguage.url}}"&gt;&lt;img src="/img/flags/{{@key}}.png" alt="{{this}}"&gt;&lt;/a&gt;&lt;/li&gt;&#13;
+                {{/each}}&#13;
+            {{else}}&#13;
+                {{#each d.l10n.multiLanguage}}&#13;
+                    &lt;li class="flag flag-{{@key}}"&gt;&lt;a href="/{{@key}}/{{../d.l10n.jsonChangeLanguage.page}}/{{urlFriendly ../d.l10n.jsonChangeLanguage.ti ../d.l10n.jsonChangeLanguage.id @key}}"&gt;&lt;img src="/img/flags/{{@key}}.png" alt="{{this}}"&gt;&lt;/a&gt;&lt;/li&gt;&#13;
+                {{/each}}&#13;
+            {{/if}}&#13;
+        {{else}}&#13;
+            {{#each d.l10n.multiLanguage}}&#13;
+            &lt;li class="flag flag-{{@key}}"&gt;&lt;a href="/{{@key}}"&gt;&lt;img src="/img/flags/{{@key}}.png" alt="{{this}}"&gt;&lt;/a&gt;&lt;/li&gt;&#13;
+            {{/each}}&#13;
+        {{/if}}&#13;
+    &lt;/ol&gt;&#13;
+&lt;/div&gt;&#13;
+&lt;/script&gt;</javascript>
+  </script>
+  <backendConfig>
+    <orderWidthUser>1</orderWidthUser>
+  </backendConfig>
+</information>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<information>
+  <db>
+    <id>2</id>
+    <ti>
+      <vi>HẠNG PHÒNG</vi>
+      <en>ROOM</en>
+    </ti>
+    <ti1>
+      <vi>TND Hotel</vi>
+      <en>TND Hotel</en>
+    </ti1>
+    <url>khach-san</url>
+    <opl>class="menu-item menu-item-2 product-in-menu" data-option-local="localProductList" data-str-sort="so=1" data-copy-template data-view-template-local="true" data-view-template=".product-in-menu .sub-menu" data-template-id="entryProductInMenu"</opl>
+    <link/>
+    <opp>3</opp>
+    <pa>0</pa>
+    <ct>
+      <vi/>
+      <en/>
+    </ct>
+    <so>3</so>
+    <ism>1</ism>
+    <st>3</st>
+    <cr>1676963684</cr>
+    <cmf>1</cmf>
+    <clc>rectangle2</clc>
+    <clr>[960,3],[560,2],[0,1]</clr>
+    <ps>2</ps>
+    <itemTemplate/>
+    <im>2_TND-SENIOR (1).jpg</im>
+  </db>
+  <more>
+    <vi>
+      <description/>
+      <contentCustom/>
+      <noteDetail/>
+    </vi>
+    <en>
+      <description/>
+      <contentCustom/>
+      <noteDetail/>
+    </en>
+    <showItem>3</showItem>
+    <numberItem>24</numberItem>
+    <customItemPageDetail/>
+    <templateBooking>entryFormBookingRoom</templateBooking>
+    <sortItem>so=1</sortItem>
+    <itemPageDetail/>
+    <itemTemplate/>
+  </more>
+  <dateModified>1686746399</dateModified>
+  <meta>
+    <vi>
+      <title/>
+      <desc/>
+      <keyword/>
+      <topscript/>
+      <bottomscript/>
+    </vi>
+    <en>
+      <title/>
+      <desc/>
+      <keyword/>
+      <topscript/>
+      <bottomscript/>
+    </en>
+  </meta>
+</information>

@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<information>
+  <table>
+    <id_1>
+      <id>1</id>
+      <ti>
+        <vi>Về TND</vi>
+        <en>About us</en>
+      </ti>
+      <ti1>
+        <vi/>
+        <en/>
+      </ti1>
+      <url>gioi-thieu</url>
+      <opl/>
+      <link/>
+      <opp>1</opp>
+      <pa>0</pa>
+      <ct>
+        <vi/>
+        <en/>
+      </ct>
+      <so>1</so>
+      <ism>1</ism>
+      <st>3</st>
+      <im>1_TNDHotel (7).jpg</im>
+    </id_1>
+    <id_2>
+      <id>2</id>
+      <ti>
+        <vi>HẠNG PHÒNG</vi>
+        <en>ROOM</en>
+      </ti>
+      <ti1>
+        <vi>TND Hotel</vi>
+        <en>TND Hotel</en>
+      </ti1>
+      <url>khach-san</url>
+      <opl>class="menu-item menu-item-2 product-in-menu" data-option-local="localProductList" data-str-sort="so=1" data-copy-template data-view-template-local="true" data-view-template=".product-in-menu .sub-menu" data-template-id="entryProductInMenu"</opl>
+      <link/>
+      <opp>3</opp>
+      <pa>0</pa>
+      <ct>
+        <vi/>
+        <en/>
+      </ct>
+      <so>3</so>
+      <ism>1</ism>
+      <st>3</st>
+      <cr>1676963684</cr>
+      <cmf>1</cmf>
+      <clc>rectangle2</clc>
+      <clr>[960,3],[560,2],[0,1]</clr>
+      <ps>2</ps>
+      <itemTemplate/>
+      <im>2_TND-SENIOR (1).jpg</im>
+    </id_2>
+    <id_4>
+      <id>4</id>
+      <ti>
+        <vi>Đặt phòng</vi>
+        <en>booking</en>
+      </ti>
+      <ti1>
+        <vi/>
+        <en/>
+      </ti1>
+      <url>dat-phong</url>
+      <opl/>
+      <link/>
+      <opp>1</opp>
+      <pa>0</pa>
+      <ct>
+        <vi/>
+        <en/>
+      </ct>
+      <so>7</so>
+      <ism>0</ism>
+      <st>2</st>
+      <cr>1676963717</cr>
+      <cmf>1</cmf>
+      <clc>rectangle2</clc>
+      <clr/>
+      <ps>1</ps>
+      <itemTemplate/>
+    </id_4>
+    <id_6>
+      <id>6</id>
+      <ti>
+        <vi>Ngôn Ngữ</vi>
+        <en>Language</en>
+      </ti>
+      <ti1>
+        <vi/>
+        <en/>
+      </ti1>
+      <url>ngon-ngu</url>
+      <opl>class="change-language" data-copy-template="" data-view-template-local="true" data-view-template=".change-language" data-template-id="entryChangeLanguageUL"</opl>
+      <link/>
+      <opp>1</opp>
+      <pa>0</pa>
+      <ct>
+        <vi/>
+        <en/>
+      </ct>
+      <so>100</so>
+      <ism>1</ism>
+      <st>2</st>
+      <cr>1679297161</cr>
+    </id_6>
+    <id_7>
+      <id>7</id>
+      <ti>
+        <vi>Tin sự kiện</vi>
+        <en>News &amp; Events</en>
+      </ti>
+      <ti1>
+        <vi/>
+        <en/>
+      </ti1>
+      <url>tin-tuc</url>
+      <opl/>
+      <link/>
+      <opp>2</opp>
+      <pa>0</pa>
+      <ct>
+        <vi/>
+        <en/>
+      </ct>
+      <so>20</so>
+      <ism>0</ism>
+      <st>2</st>
+      <cr>1679805369</cr>
+      <cmf>1</cmf>
+    </id_7>
+    <id_8>
+      <id>8</id>
+      <ti>
+        <vi>Liên hệ</vi>
+        <en>Contact</en>
+      </ti>
+      <ti1>
+        <vi/>
+        <en>WHY STAY ANYWHERE ELSE</en>
+      </ti1>
+      <url>contact</url>
+      <opl/>
+      <link/>
+      <opp>1</opp>
+      <pa>0</pa>
+      <ct>
+        <vi/>
+        <en/>
+      </ct>
+      <so>50</so>
+      <ism>1</ism>
+      <st>2</st>
+      <cr>1684555658</cr>
+    </id_8>
+    <id_9>
+      <id>9</id>
+      <ti>
+        <vi>Dịch vụ &amp; tiện ích</vi>
+        <en>Services &amp; Facilities</en>
+      </ti>
+      <ti1>
+        <vi/>
+        <en/>
+      </ti1>
+      <url>tien-ich</url>
+      <opl/>
+      <link/>
+      <opp>5</opp>
+      <pa>0</pa>
+      <ct>
+        <vi/>
+        <en/>
+      </ct>
+      <so>8</so>
+      <ism>1</ism>
+      <st>2</st>
+      <cr>1684827222</cr>
+    </id_9>
+    <id_10>
+      <id>10</id>
+      <ti>
+        <vi>Nhà hàng Luciana</vi>
+        <en>Luciana Restaurant</en>
+      </ti>
+      <ti1>
+        <vi/>
+        <en/>
+      </ti1>
+      <url>nha-hang</url>
+      <opl/>
+      <link/>
+      <opp>5</opp>
+      <pa>9</pa>
+      <ct>
+        <vi>Đầu bếp chuyên nghiệp và tận tâm sẽ đưa bạn vào hành trình khám phá hàng trăm món ăn Á – Âu đặc sắc. Địa điểm: Tầng 1 Giờ phục vụ: 6:00 - 9:30 Sức chứa: 170 khách </vi>
+        <en>Situated on the 1st floor of the Hotel, Luciana Restaurant will take guests to an exciting culinary journey of authentic and signature local flavors.</en>
+      </ct>
+      <so>0</so>
+      <st>2</st>
+      <cr>1684827360</cr>
+      <ism>0</ism>
+      <im>10_nh.jpeg</im>
+    </id_10>
+    <id_11>
+      <id>11</id>
+      <ti>
+        <vi>Hồ bơi &amp; GYM</vi>
+        <en>Swimming pool &amp; GYM</en>
+      </ti>
+      <ti1>
+        <vi></vi>
+        <en></en>
+      </ti1>
+      <url>ho-boi</url>
+      <opl></opl>
+      <link></link>
+      <opp>5</opp>
+      <pa>9</pa>
+      <ct>
+        <vi>Hồ bơi tọa lạc tại tầng 14 của khách sạn TND Hotel. Có khu vực hồ bơi riêng dành cho trẻ em và người lớn. Qúy khách có thể đắm mình trong dòng nước mát dưới hồ bơi và ngắm trọn hoàng hôn tuyệt đẹp của thành phố biển Nha Trang. Hồ bơi hứa hẹn sẽ là nơi để bạn phục hồi sức khỏe sau một ngày dài tham quan Nha Trang và tiếp sức thêm năng lượng cho những chuyến đi tiếp theo. </vi>
+        <en>Swimming pool is located on the 14th floor of TND Hotel. There is a separate pool area for children and adults. You can immerse yourself in the cool water under the pool and watch the beautiful sunset of the coastal city of Nha Trang. The swimming pool promises to be a place for you to recover after a long day of visiting Nha Trang and refuel for the next trip.</en>
+      </ct>
+      <so>0</so>
+      <st>2</st>
+      <cr>1684827405</cr>
+      <ism>0</ism>
+      <im>11_hb.jpg</im>
+    </id_11>
+    <id_12>
+      <id>12</id>
+      <ti>
+        <vi>D’Coffee Louge</vi>
+        <en>D’Coffee Louge</en>
+      </ti>
+      <ti1>
+        <vi/>
+        <en/>
+      </ti1>
+      <url>DCoffee-Louge</url>
+      <opl/>
+      <link/>
+      <opp>5</opp>
+      <pa>9</pa>
+      <ct>
+        <vi>Có mọi thứ bạn cần cho những phút giây thư giãn trọn vẹn. Enjoy the panoramic landscape of the stunning coastal</vi>
+        <en>Has everything you need for moments of complete relaxation. Enjoy the panoramic landscape of the stunning coastal</en>
+      </ct>
+      <so>0</so>
+      <st>2</st>
+      <cr>1684827521</cr>
+      <ism>0</ism>
+      <im>12_1.jpg</im>
+    </id_12>
+    <id_14>
+      <id>14</id>
+      <ti>
+        <vi>Phòng hội nghị</vi>
+        <en>Conference room</en>
+      </ti>
+      <ti1>
+        <vi/>
+        <en/>
+      </ti1>
+      <url>phong-hoi-nghi</url>
+      <opl/>
+      <link/>
+      <opp>5</opp>
+      <pa>9</pa>
+      <ct>
+        <vi>Với không gian rộng lớn 270m2, sức chứa gần 200 khách, được đầu tư trang thiết bị hiện đại cùng cơ sở vật chất sang trọng... Phòng Hội nghị tại khách sạn TND sẽ là lựa chọn lí tưởng nhất cho những sự kiện, hội thảo tại thành phố biển Nha Trang. Ngoài ra đây cũng là nơi tổ chức tiệc sinh nhật, gala… với chỗ ngồi ấm cúng, trang trí đẹp mắt. Mọi người quây quần bên nhau tạo nên cảm giác hạnh phúc, gắn kết giữa các thành viên trong gia đình với nhau</vi>
+        <en>With a space of 270m2, a capacity of nearly 200 guests, full sound, light and modern and luxurious facilities. Conference room at TND Hotel will be the most ideal choice for events and seminars in the coastal city of Nha Trang.</en>
+      </ct>
+      <so>0</so>
+      <st>2</st>
+      <cr>1684827578</cr>
+      <ism>0</ism>
+      <im>14_hn.jpg</im>
+    </id_14>
+    <id_15>
+      <id>15</id>
+      <ti>
+        <vi>Penthouse Family</vi>
+        <en>Penthouse Family</en>
+      </ti>
+      <ti1>
+        <vi/>
+        <en/>
+      </ti1>
+      <url>Penthouse-Family</url>
+      <opl/>
+      <link/>
+      <opp>3</opp>
+      <pa>2</pa>
+      <ct>
+        <vi/>
+        <en/>
+      </ct>
+      <so>0</so>
+      <st>2</st>
+      <cr>1686019116</cr>
+      <ism>0</ism>
+      <im>15_z5638792718800_5c209633b9a7dc9b307d2cd4c6047db8.jpg</im>
+    </id_15>
+    <id_16>
+      <id>16</id>
+      <ti>
+        <vi>Đặt phòng</vi>
+        <en>Booking</en>
+      </ti>
+      <ti1>
+        <vi/>
+        <en/>
+      </ti1>
+      <url>reservation</url>
+      <opl/>
+      <link/>
+      <opp>5</opp>
+      <pa>0</pa>
+      <ct>
+        <vi/>
+        <en/>
+      </ct>
+      <so>3</so>
+      <ism>1</ism>
+      <st>2</st>
+      <cr>1742433777</cr>
+    </id_16>
+  </table>
+</information>

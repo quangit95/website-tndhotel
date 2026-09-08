@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<information>
+  <db>
+    <id>9</id>
+    <ti>
+      <vi>Dịch vụ &amp; tiện ích</vi>
+      <en>Services &amp; Facilities</en>
+    </ti>
+    <ti1>
+      <vi/>
+      <en/>
+    </ti1>
+    <url>tien-ich</url>
+    <opl/>
+    <link/>
+    <opp>5</opp>
+    <pa>0</pa>
+    <ct>
+      <vi/>
+      <en/>
+    </ct>
+    <so>8</so>
+    <ism>1</ism>
+    <st>2</st>
+    <cr>1684827222</cr>
+  </db>
+  <more>
+    <vi>
+      <description>&lt;div class="item-view-category-page image-65" data-view-list-by-handlebar="" data-url="/api/get/menu?pa=9" data-init-object="languageText.dropdownLocalOption.menuTable" data-filter-init="[{&amp;quot;name&amp;quot;:&amp;quot;pa&amp;quot;,&amp;quot;value&amp;quot;:&amp;quot;9&amp;quot;,&amp;quot;compare&amp;quot;:&amp;quot;equal&amp;quot;}]" data-method="get" data-show-page="10" data-show-item="24" data-show-all="true" data-template-id="entryLandingPage"&gt;&#13;
+&lt;div class="view-items view-items-mobile" data-content="" data-center-items="" data-space-item="[20,20]" data-class-name="view-items-mobile" data-item-class=".item" data-responsive="true" data-items-custom="[600,2],[0,1]"&gt;&amp;nbsp;&lt;/div&gt;&#13;
+&lt;/div&gt;</description>
+      <contentCustom></contentCustom>
+    </vi>
+    <en>
+      <description>&lt;div class="item-view-category-page image-65" data-view-list-by-handlebar="" data-url="/api/get/menu?pa=9" data-init-object="languageText.dropdownLocalOption.menuTable" data-filter-init="[{&amp;quot;name&amp;quot;:&amp;quot;pa&amp;quot;,&amp;quot;value&amp;quot;:&amp;quot;9&amp;quot;,&amp;quot;compare&amp;quot;:&amp;quot;equal&amp;quot;}]" data-method="get" data-show-page="10" data-show-item="24" data-show-all="true" data-template-id="entryLandingPage"&gt;&#13;
+&lt;div class="view-items view-items-mobile" data-content="" data-center-items="" data-space-item="[20,20]" data-class-name="view-items-mobile" data-item-class=".item" data-responsive="true" data-items-custom="[600,2],[0,1]"&gt;&amp;nbsp;&lt;/div&gt;&#13;
+&lt;/div&gt;</description>
+      <contentCustom></contentCustom>
+    </en>
+    <isform>1</isform>
+  </more>
+  <dateModified>1685760937</dateModified>
+</information>

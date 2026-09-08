@@ -1,0 +1,13 @@
+{
+    "autoload":
+    {
+
+    },
+    "require":
+    {
+        "phpmailer/phpmailer": "^5.2",
+        "league/oauth2-google": "^2.0",
+        "catfan/medoo": "^1.5"
+    }
+}
+

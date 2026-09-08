@@ -1,0 +1,102 @@
+.lt-ie9 .website {
+    display: none;
+}
+.table-responsive > .table {
+    min-width: 860px;
+}
+
+.img-detail img {
+    display: block;
+    width: 100%;
+}
+
+/* Header */
+.logo img {
+    width: 100px;
+}
+
+.btn-fixed-bottom, .top-bar {
+    display: none;
+}
+
+.header-content {
+    margin-top: 10px;
+    padding: 10px 0;
+    color: #4f2e25;
+}
+.header-content address {
+    margin-bottom: 4px;
+}
+
+/* Menu */
+.s-icon:before {
+    color: red;
+}
+
+#main-menu .desktop-menu > ul {
+    background-color: black;
+}
+#main-menu .desktop-menu > ul > li {
+    display: inline-block;
+    float: none;
+}
+#main-menu .desktop-menu a {
+    text-transform: uppercase;
+    color: white;
+}
+
+#main-menu .desktop-menu > a:hover {
+    color: gray;
+}
+
+#main-menu .desktop-menu > ul > li:first-child > a {
+    font-size: 0;
+    height: 38px;
+    padding-top: 4px;
+}
+
+#main-menu .desktop-menu > ul > li:first-child > a:before {
+    font-family: 'FontAwesome';
+    line-height: 1;
+    font-size: 30px;
+    content: "\f015";
+}
+
+#main-menu .desktop-menu > ul > li:first-child > a:after {
+    display: none;
+}
+
+#main-menu .desktop-menu > ul > li ul {
+    padding: 0px;
+    background-color: white;
+}
+
+#main-menu .desktop-menu > ul > li:hover ul li {
+    background-color: black;
+    margin-bottom: 1px;
+}
+
+.form-edit-google-map {
+    width: 100%;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    height: 40px;
+    z-index: 10;
+}
+
+@media only screen and (min-width: 768px) {
+    .logo img {
+
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .logo img {
+
+    }
+    .container {
+        width: 96%;
+        margin: 0px auto;
+    }
+}

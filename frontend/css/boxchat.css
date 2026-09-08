@@ -1,0 +1,11 @@
+.form-signin {
+  width: 400px;
+  margin:50px auto;
+  background-color: #000;
+  padding: 20px;
+  border-radius: 4px;
+}
+
+.fa-commenting-o:before {
+    content: "\f27b";
+}
