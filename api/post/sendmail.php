@@ -6,12 +6,12 @@ if(isset($websiteIsLive)) {
 
     // Determine SMTP configuration
     // 1. Environment variables (recommended for Docker, Render, etc.)
-    $smtpHost = getenv('SMTP_HOST') ?: ($_ENV['SMTP_HOST'] ?? ($_SERVER['SMTP_HOST'] ?? 'smtp.gmail.com'));
-    $smtpPort = intval(getenv('SMTP_PORT') ?: ($_ENV['SMTP_PORT'] ?? ($_SERVER['SMTP_PORT'] ?? 587)));
-    $smtpSecure = getenv('SMTP_SECURE') ?: ($_ENV['SMTP_SECURE'] ?? ($_SERVER['SMTP_SECURE'] ?? 'tls'));
-    $smtpUser = getenv('SMTP_USER') ?: (getenv('SMTP_USERNAME') ?: ($_ENV['SMTP_USER'] ?? ($_SERVER['SMTP_USER'] ?? '')));
-    $smtpPass = getenv('SMTP_PASS') ?: (getenv('SMTP_PASSWORD') ?: ($_ENV['SMTP_PASS'] ?? ($_SERVER['SMTP_PASS'] ?? '')));
-    $smtpFrom = getenv('SMTP_FROM') ?: ($_ENV['SMTP_FROM'] ?? ($_SERVER['SMTP_FROM'] ?? ''));
+    $smtpHost = getenv('SMTP_HOST') ?: ($_ENV['SMTP_HOST'] ?? ($_SERVER['SMTP_HOST'] ?? 'mail92176.maychuemail.com'));
+    $smtpPort = intval(getenv('SMTP_PORT') ?: ($_ENV['SMTP_PORT'] ?? ($_SERVER['SMTP_PORT'] ?? 465)));
+    $smtpSecure = getenv('SMTP_SECURE') ?: ($_ENV['SMTP_SECURE'] ?? ($_SERVER['SMTP_SECURE'] ?? 'ssl'));
+    $smtpUser = getenv('SMTP_USER') ?: (getenv('SMTP_USERNAME') ?: ($_ENV['SMTP_USER'] ?? ($_SERVER['SMTP_USER'] ?? 'info@tndhotelnhatrang.com')));
+    $smtpPass = getenv('SMTP_PASS') ?: (getenv('SMTP_PASSWORD') ?: ($_ENV['SMTP_PASS'] ?? ($_SERVER['SMTP_PASS'] ?? 'Tnd@2022!@#')));
+    $smtpFrom = getenv('SMTP_FROM') ?: ($_ENV['SMTP_FROM'] ?? ($_SERVER['SMTP_FROM'] ?? 'info@tndhotelnhatrang.com'));
     $smtpFromName = getenv('SMTP_FROM_NAME') ?: ($_ENV['SMTP_FROM_NAME'] ?? ($_SERVER['SMTP_FROM_NAME'] ?? 'TND Hotel Nha Trang'));
 
     // 2. XML config fallback

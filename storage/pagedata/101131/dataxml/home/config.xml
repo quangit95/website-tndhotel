@@ -235,11 +235,11 @@
       <contact>info@tndhotelnhatrang.com</contact>
     </email>
     <smtp>
-      <host>smtp.gmail.com</host>
-      <port>587</port>
-      <secure>tls</secure>
-      <user></user>
-      <pass></pass>
+      <host>mail92176.maychuemail.com</host>
+      <port>465</port>
+      <secure>ssl</secure>
+      <user>info@tndhotelnhatrang.com</user>
+      <pass>Tnd@2022!@#</pass>
       <from>info@tndhotelnhatrang.com</from>
       <from_name>TND Hotel Nha Trang</from_name>
     </smtp>

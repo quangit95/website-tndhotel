@@ -253,5 +253,33 @@
       <id>18</id>
       <cr>1788915451</cr>
     </id_18>
+    <id_19>
+      <st>1</st>
+      <mo>1</mo>
+      <ti>Penthouse Family</ti>
+      <pid>5</pid>
+      <fn>Quang Đặt Phòng</fn>
+      <ph>0935793070</ph>
+      <em>08quang@gmail.com</em>
+      <adult>2</adult>
+      <child>2</child>
+      <dt>09-09-2026 08:00 AM - 12-09-2026 12:00 PM</dt>
+      <id>19</id>
+      <cr>1788916042</cr>
+    </id_19>
+    <id_20>
+      <st>1</st>
+      <mo>1</mo>
+      <ti>Royal King Gold</ti>
+      <pid>6</pid>
+      <fn>Nguyễn Văn Quang</fn>
+      <ph>0935793070</ph>
+      <em>08quang@gmail.com</em>
+      <adult>2</adult>
+      <child>2</child>
+      <dt>09-09-2026 08:07 AM - 09-09-2026 11:59 PM</dt>
+      <id>20</id>
+      <cr>1788916057</cr>
+    </id_20>
   </table>
 </information>
