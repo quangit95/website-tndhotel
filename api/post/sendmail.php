@@ -1,57 +1,64 @@
 <?php
 if(isset($websiteIsLive)) {
-    if (!class_exists('PHPMailerOAuth')) {
+    if (!class_exists('PHPMailer')) {
         require_once dirname(dirname(__DIR__)) . '/vendor/autoload.php';
     }
 
-    $smtp = array(
-        "host"=>"smtp.gmail.com",
-        "port"=>587,
-        "secure"=> "tls", #tls
-        "authenticate" => true,
-    );
+    // Determine SMTP configuration
+    // 1. Environment variables (recommended for Docker, Render, etc.)
+    $smtpHost = getenv('SMTP_HOST') ?: ($_ENV['SMTP_HOST'] ?? ($_SERVER['SMTP_HOST'] ?? 'smtp.gmail.com'));
+    $smtpPort = intval(getenv('SMTP_PORT') ?: ($_ENV['SMTP_PORT'] ?? ($_SERVER['SMTP_PORT'] ?? 587)));
+    $smtpSecure = getenv('SMTP_SECURE') ?: ($_ENV['SMTP_SECURE'] ?? ($_SERVER['SMTP_SECURE'] ?? 'tls'));
+    $smtpUser = getenv('SMTP_USER') ?: (getenv('SMTP_USERNAME') ?: ($_ENV['SMTP_USER'] ?? ($_SERVER['SMTP_USER'] ?? '')));
+    $smtpPass = getenv('SMTP_PASS') ?: (getenv('SMTP_PASSWORD') ?: ($_ENV['SMTP_PASS'] ?? ($_SERVER['SMTP_PASS'] ?? '')));
+    $smtpFrom = getenv('SMTP_FROM') ?: ($_ENV['SMTP_FROM'] ?? ($_SERVER['SMTP_FROM'] ?? ''));
+    $smtpFromName = getenv('SMTP_FROM_NAME') ?: ($_ENV['SMTP_FROM_NAME'] ?? ($_SERVER['SMTP_FROM_NAME'] ?? 'TND Hotel Nha Trang'));
 
-    $sendMailObj = isset($sendMailObj) ? $sendMailObj : array(
-            "from" => "info@phpvnn.com",
-            "to" => "phaphn@gmail.com",
-            "sender" => "Phpvnn",
-            "receiver" => "User",
-            "reply" => "phaphn@gmail.com",
-            "replyInfo" => "Phpvnn.com",
-            "subject" => "Check Send Mail - PHPMailerAutoload",
-            "content" => 'This is the HTML message body <b>in bold!</b>',
-        );
-
-    if(!isset($sendMailObj["from"])) {
-        $sendMailObj["from"] = "team@phpvnn.com";
-    }
-    if(!isset($sendMailObj["sender"])) {
-        $sendMailObj["sender"] = "team@phpvnn.com";
-    }
-    if(!isset($sendMailObj["reply"])) {
-        $sendMailObj["reply"] = "phaphn@gmail.com";
-    }
-    if(!isset($sendMailObj["replyInfo"])) {
-        $sendMailObj["replyInfo"] = "Phpvnn.com";
+    // 2. XML config fallback
+    if (empty($smtpUser) && isset($informationConfig["config"]["smtp"])) {
+        $smtpCfg = $informationConfig["config"]["smtp"];
+        $smtpHost = !empty($smtpCfg["host"]) ? $smtpCfg["host"] : $smtpHost;
+        $smtpPort = !empty($smtpCfg["port"]) ? intval($smtpCfg["port"]) : $smtpPort;
+        $smtpSecure = !empty($smtpCfg["secure"]) ? $smtpCfg["secure"] : $smtpSecure;
+        $smtpUser = !empty($smtpCfg["user"]) ? $smtpCfg["user"] : (!empty($smtpCfg["username"]) ? $smtpCfg["username"] : '');
+        $smtpPass = !empty($smtpCfg["pass"]) ? $smtpCfg["pass"] : (!empty($smtpCfg["password"]) ? $smtpCfg["password"] : '');
+        $smtpFrom = !empty($smtpCfg["from"]) ? $smtpCfg["from"] : $smtpFrom;
+        $smtpFromName = !empty($smtpCfg["from_name"]) ? $smtpCfg["from_name"] : $smtpFromName;
     }
 
-    $sendMailObj["smtp"] = $smtp;
-
+    // 3. OAuth config
     $oauthUserEmail = isset($informationWebsite["backendConfig"]["phpmailer"]["oauthUserEmail"]) ? $informationWebsite["backendConfig"]["phpmailer"]["oauthUserEmail"] : "";
     $oauthClientId = isset($informationWebsite["backendConfig"]["phpmailer"]["oauthClientId"]) ? $informationWebsite["backendConfig"]["phpmailer"]["oauthClientId"] : "";
     $oauthClientSecret = isset($informationWebsite["backendConfig"]["phpmailer"]["oauthClientSecret"]) ? $informationWebsite["backendConfig"]["phpmailer"]["oauthClientSecret"] : "";
     $oauthRefreshToken = isset($informationWebsite["backendConfig"]["phpmailer"]["oauthRefreshToken"]) ? $informationWebsite["backendConfig"]["phpmailer"]["oauthRefreshToken"] : "";
 
-    // Only attempt to send mail via OAuth if credentials are configured
-    if(!empty($oauthClientId) && !empty($oauthRefreshToken)) {
+    $sendMailObj = isset($sendMailObj) ? $sendMailObj : array(
+        "from" => "info@tndhotelnhatrang.com",
+        "to" => "info@tndhotelnhatrang.com",
+        "sender" => "TND Hotel Nha Trang",
+        "receiver" => "User",
+        "reply" => "info@tndhotelnhatrang.com",
+        "replyInfo" => "TND Hotel Nha Trang",
+        "subject" => "Thông báo từ TND Hotel",
+        "content" => 'Nội dung thông báo',
+    );
+
+    $fromEmail = !empty($smtpFrom) ? $smtpFrom : (!empty($smtpUser) ? $smtpUser : ($sendMailObj["from"] ?? "info@tndhotelnhatrang.com"));
+    $fromName = !empty($smtpFromName) ? $smtpFromName : ($sendMailObj["sender"] ?? "TND Hotel Nha Trang");
+
+    // Case 1: Standard SMTP authentication (Gmail App Password, Brevo, SendGrid, etc.)
+    if (!empty($smtpUser) && !empty($smtpPass)) {
         try {
-            $mail = new PHPMailerOAuth;
+            $mail = new PHPMailer(true);
             $mail->isSMTP();
             $mail->SMTPDebug = 0;
-            $mail->Host = $smtp["host"];
-            $mail->Port = $smtp["port"];
-            $mail->SMTPSecure = $smtp["secure"];
-            $mail->SMTPAuth = $smtp["authenticate"];
+            $mail->Host = $smtpHost;
+            $mail->Port = $smtpPort;
+            $mail->SMTPAuth = true;
+            $mail->SMTPSecure = $smtpSecure;
+            $mail->Username = $smtpUser;
+            $mail->Password = $smtpPass;
+            $mail->CharSet = "utf-8";
             $mail->SMTPOptions = array(
                 'ssl' => array(
                     'verify_peer' => false,
@@ -60,49 +67,93 @@ if(isset($websiteIsLive)) {
                 )
             );
 
-            $mail->AuthType = 'XOAUTH2';
-            $mail->oauthUserEmail    = $oauthUserEmail;
-            $mail->oauthClientId     = $oauthClientId;
-            $mail->oauthClientSecret = $oauthClientSecret;
-            $mail->oauthRefreshToken = $oauthRefreshToken;
-
-            $mail->Mailtype         = 'html';
-            $mail->Charset          = 'utf-8';
-            $mail->Crlf             = "\r\n";
-            $mail->Newline          = "\r\n";
-
-            if(isset($informationWebsite["backendConfig"]["phpmailer"]["textsender"]) && !empty($informationWebsite["backendConfig"]["phpmailer"]["textsender"])) {
-                $sendMailObj["sender"] = $informationWebsite["backendConfig"]["phpmailer"]["textsender"];
-            }
-
-            $mail->setFrom($sendMailObj["from"], $sendMailObj["sender"]);
-            $mail->addReplyTo($sendMailObj["reply"], $sendMailObj["replyInfo"]);
-            $mail->addAddress($sendMailObj["to"]);
-            $mail->CharSet= "utf-8";
+            $mail->setFrom($fromEmail, $fromName);
+            $mail->addReplyTo($sendMailObj["reply"] ?? $fromEmail, $sendMailObj["replyInfo"] ?? $fromName);
+            $mail->addAddress($sendMailObj["to"], $sendMailObj["receiver"] ?? "");
             $mail->isHTML(true);
             $mail->Subject = $sendMailObj["subject"];
-            $mail->Body    = $sendMailObj["content"];
-            $mail->AltBody = isset($sendMailObj["altBody"]) ? $sendMailObj["altBody"] : $sendMailObj["content"];
+            $mail->Body = $sendMailObj["content"];
+            $mail->AltBody = isset($sendMailObj["altBody"]) ? $sendMailObj["altBody"] : strip_tags($sendMailObj["content"]);
 
-            if(isset($listMailCC) && $listMailCC) {
-                foreach ($listMailCC as $key => $value) {
-                    $mail->AddCC($value["email"], $value["name"]);
-                }
-            } elseif(isset($listMailBCC) && $listMailBCC) {
-                foreach ($listMailBCC as $key => $value) {
-                    $mail->AddBCC($value["email"], $value["name"]);
+            if(isset($listMailCC) && is_array($listMailCC)) {
+                foreach ($listMailCC as $val) {
+                    if(!empty($val["email"])) {
+                        $mail->addCC($val["email"], $val["name"] ?? "");
+                    }
                 }
             }
 
-            if (!$mail->send()) {
-                error_log('Mailer Error: ' . $mail->ErrorInfo);
-            } else {
+            if(isset($listMailBCC) && is_array($listMailBCC)) {
+                foreach ($listMailBCC as $val) {
+                    if(!empty($val["email"])) {
+                        $mail->addBCC($val["email"], $val["name"] ?? "");
+                    }
+                }
+            }
+
+            if ($mail->send()) {
+                error_log("[Mail] Email sent successfully to: " . $sendMailObj["to"]);
                 $isDone = true;
+            } else {
+                error_log("[Mail Error] Failed to send to " . $sendMailObj["to"] . ": " . $mail->ErrorInfo);
             }
         } catch (Exception $e) {
-            error_log('Mailer Exception: ' . $e->getMessage());
+            error_log("[Mail Exception] " . $e->getMessage());
         }
-    } else {
+    }
+    // Case 2: OAuth2 authentication (if configured)
+    elseif (!empty($oauthClientId) && !empty($oauthRefreshToken)) {
+        try {
+            $mail = new PHPMailerOAuth;
+            $mail->isSMTP();
+            $mail->SMTPDebug = 0;
+            $mail->Host = 'smtp.gmail.com';
+            $mail->Port = 587;
+            $mail->SMTPSecure = 'tls';
+            $mail->SMTPAuth = true;
+            $mail->CharSet = 'utf-8';
+            $mail->AuthType = 'XOAUTH2';
+            $mail->oauthUserEmail = $oauthUserEmail;
+            $mail->oauthClientId = $oauthClientId;
+            $mail->oauthClientSecret = $oauthClientSecret;
+            $mail->oauthRefreshToken = $oauthRefreshToken;
+            $mail->SMTPOptions = array(
+                'ssl' => array(
+                    'verify_peer' => false,
+                    'verify_peer_name' => false,
+                    'allow_self_signed' => true
+                )
+            );
+
+            $mail->setFrom($fromEmail, $fromName);
+            $mail->addReplyTo($sendMailObj["reply"] ?? $fromEmail, $sendMailObj["replyInfo"] ?? $fromName);
+            $mail->addAddress($sendMailObj["to"], $sendMailObj["receiver"] ?? "");
+            $mail->isHTML(true);
+            $mail->Subject = $sendMailObj["subject"];
+            $mail->Body = $sendMailObj["content"];
+            $mail->AltBody = isset($sendMailObj["altBody"]) ? $sendMailObj["altBody"] : strip_tags($sendMailObj["content"]);
+
+            if(isset($listMailCC) && is_array($listMailCC)) {
+                foreach ($listMailCC as $val) {
+                    if(!empty($val["email"])) {
+                        $mail->addCC($val["email"], $val["name"] ?? "");
+                    }
+                }
+            }
+
+            if ($mail->send()) {
+                error_log("[Mail OAuth] Email sent successfully to: " . $sendMailObj["to"]);
+                $isDone = true;
+            } else {
+                error_log("[Mail OAuth Error] Failed to send: " . $mail->ErrorInfo);
+            }
+        } catch (Exception $e) {
+            error_log("[Mail OAuth Exception] " . $e->getMessage());
+        }
+    }
+    // Case 3: No credentials configured
+    else {
+        error_log("[Mail Notice] SMTP credentials not configured (SMTP_USER / SMTP_PASS). Email notification to '" . ($sendMailObj["to"] ?? "unknown") . "' was skipped.");
         $isDone = true;
     }
 } else {

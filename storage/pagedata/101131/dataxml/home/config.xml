@@ -234,6 +234,15 @@
       <orders>info@tndhotelnhatrang.com</orders>
       <contact>info@tndhotelnhatrang.com</contact>
     </email>
+    <smtp>
+      <host>smtp.gmail.com</host>
+      <port>587</port>
+      <secure>tls</secure>
+      <user></user>
+      <pass></pass>
+      <from>info@tndhotelnhatrang.com</from>
+      <from_name>TND Hotel Nha Trang</from_name>
+    </smtp>
     <script>
       <css>.box-video iframe { border:none; }&#13;
 .box-video { padding-top:133%; margin-top:20px; }&#13;
