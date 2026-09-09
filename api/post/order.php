@@ -19,43 +19,76 @@ if($ordersValidate) {
         $itemList = json_decode($itemList, true);
     }
 
-    # Update status for each order
-    if (isset($post["db"]["id"]) && intval($post["db"]["id"]) && isset($post["db"]["st"]) > 0 ) {
+    # Delete order or booking
+    if (isset($post["updateNode"]) && $post["updateNode"] == "del" && isset($post["db"]["id"])) {
+        $iId = intval($post["db"]["id"]);
+        $node = 'id_' . $iId;
+        $deleted = false;
+
+        if (isset($itemList["table"][$node])) {
+            unset($itemList["table"][$node]);
+            saveXMLFile($file, $itemList);
+            $deleted = true;
+        }
+
+        $fileBooking = FOLDERORDER . "booking.xml";
+        if (is_file($fileBooking)) {
+            $bookingList = simplexml_load_file($fileBooking);
+            $bookingList = json_decode(json_encode($bookingList), true);
+            if (isset($bookingList["table"][$node])) {
+                unset($bookingList["table"][$node]);
+                saveXMLFile($fileBooking, $bookingList);
+                $deleted = true;
+            }
+        }
+
+        if ($deleted) {
+            $code = 200;
+            $message = isset($language["updateSuccess"]) ? $language["updateSuccess"] : "Xoá thành công";
+        } else {
+            $code = 404;
+            $errors = "not found order";
+        }
+    }
+    # Update status for each order or booking
+    elseif (isset($post["db"]["id"]) && intval($post["db"]["id"]) && isset($post["db"]["st"]) && intval($post["db"]["st"]) > 0 ) {
 
         $iId = intval($post["db"]["id"]);
         $node = 'id_' . $iId;
+        $updated = false;
 
         if(isset($itemList["table"][$node]) && isset($post["db"]["st"]) ) {
             $itemList["table"][$node]["st"] = intval($post["db"]["st"]);
-            $code = 200;
+            if (saveXMLFile($file, $itemList)) {
+                $fileInfo = FOLDERORDER . $iId . ".xml";
+                if (is_file($fileInfo)) {
+                    $information = simplexml_load_file($fileInfo);
+                    $information = json_decode(json_encode($information), true);
+                    $information["db"] = $itemList["table"][$node];
+                    saveXMLFile($fileInfo, $information);
+                }
+                $updated = true;
+            }
         }
-        else {
+
+        $fileBooking = FOLDERORDER . "booking.xml";
+        if (is_file($fileBooking)) {
+            $bookingList = simplexml_load_file($fileBooking);
+            $bookingList = json_decode(json_encode($bookingList), true);
+            if (isset($bookingList["table"][$node])) {
+                $bookingList["table"][$node]["st"] = intval($post["db"]["st"]);
+                if (saveXMLFile($fileBooking, $bookingList)) {
+                    $updated = true;
+                }
+            }
+        }
+
+        if ($updated) {
+            $code = 200;
+            $message = isset($language["updateSuccess"]) ? $language["updateSuccess"] : "Cập nhật thành công";
+        } else {
             $code = 404;
             $errors = "not found order";
-            die;
-        }
-
-        // save item to file
-        if ($code ==200 && saveXMLFile($file, $itemList)) {
-            $fileInfo = FOLDERORDER . $iId . ".xml";
-            if (is_file($fileInfo)) {
-                $information = simplexml_load_file($fileInfo);
-                $information = json_encode($information);
-                $information = json_decode($information, true);
-            }
-            $information["db"] = $itemList["table"][$node];
-            // save file detail
-            if (saveXMLFile($fileInfo, $information)) {
-                $code = 200;
-                $message = $language["updateSuccess"];
-            } else {
-                $code = 501;
-                $errors = $language["unknownErrors"];
-            }
-
-        } else {
-            $code = 501;
-            $errors = $language["unknownErrors"];
         }
 
     } else {
