@@ -80,6 +80,13 @@ if($nodeUpdate == "db") {
         $messageBooking = '<div><h3>Booking info</h3>'.$strInfoBooking.'</div><hr>'.'<div><h3>Customer info</h3>'.$strInfoCustomer.'</div>';
         $dataResponse = array("sms"=>$messageBooking);
 
+        // If fastcgi is available, return response to visitor immediately
+        if (function_exists('fastcgi_finish_request')) {
+            response($dataResponse, $code, $message, null);
+            $responseSent = true;
+            fastcgi_finish_request();
+        }
+
 
         $hotelEmail = isset($informationConfig["config"]["email"]["orders"]) && !empty($informationConfig["config"]["email"]["orders"]) 
             ? $informationConfig["config"]["email"]["orders"] 

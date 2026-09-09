@@ -48,57 +48,98 @@ if(isset($websiteIsLive)) {
 
     // Case 1: Standard SMTP authentication (Gmail App Password, Brevo, SendGrid, etc.)
     if (!empty($smtpUser) && !empty($smtpPass)) {
-        try {
-            $mail = new PHPMailer(true);
-            $mail->isSMTP();
-            $mail->SMTPDebug = 0;
-            $mail->Host = $smtpHost;
-            $mail->Port = $smtpPort;
-            $mail->SMTPAuth = true;
-            $mail->SMTPSecure = $smtpSecure;
-            $mail->Username = $smtpUser;
-            $mail->Password = $smtpPass;
-            $mail->CharSet = "utf-8";
-            $mail->SMTPOptions = array(
-                'ssl' => array(
-                    'verify_peer' => false,
-                    'verify_peer_name' => false,
-                    'allow_self_signed' => true
-                )
-            );
+        static $smtpConnectivityChecked = false;
+        static $smtpIsReachable = false;
+        static $activePort = null;
+        static $activeSecure = null;
 
-            $mail->setFrom($fromEmail, $fromName);
-            $mail->addReplyTo($sendMailObj["reply"] ?? $fromEmail, $sendMailObj["replyInfo"] ?? $fromName);
-            $mail->addAddress($sendMailObj["to"], $sendMailObj["receiver"] ?? "");
-            $mail->isHTML(true);
-            $mail->Subject = $sendMailObj["subject"];
-            $mail->Body = $sendMailObj["content"];
-            $mail->AltBody = isset($sendMailObj["altBody"]) ? $sendMailObj["altBody"] : strip_tags($sendMailObj["content"]);
+        if (!$smtpConnectivityChecked) {
+            $smtpConnectivityChecked = true;
+            // Prefer port 587 (TLS) first as it is standard and supported across cloud providers
+            $candidatePorts = [
+                ['port' => 587, 'secure' => 'tls', 'prefix' => ''],
+                ['port' => 465, 'secure' => 'ssl', 'prefix' => 'ssl://']
+            ];
+            // If another port was explicitly configured in config, check it first
+            if ($smtpPort != 587 && $smtpPort != 465 && $smtpPort > 0) {
+                array_unshift($candidatePorts, [
+                    'port' => $smtpPort,
+                    'secure' => $smtpSecure ?: 'tls',
+                    'prefix' => ($smtpSecure === 'ssl' ? 'ssl://' : '')
+                ]);
+            }
 
-            if(isset($listMailCC) && is_array($listMailCC)) {
-                foreach ($listMailCC as $val) {
-                    if(!empty($val["email"])) {
-                        $mail->addCC($val["email"], $val["name"] ?? "");
-                    }
+            foreach ($candidatePorts as $candidate) {
+                $fp = @fsockopen($candidate['prefix'] . $smtpHost, $candidate['port'], $errno, $errstr, 1.0);
+                if ($fp) {
+                    fclose($fp);
+                    $smtpIsReachable = true;
+                    $activePort = $candidate['port'];
+                    $activeSecure = $candidate['secure'];
+                    break;
                 }
             }
 
-            if(isset($listMailBCC) && is_array($listMailBCC)) {
-                foreach ($listMailBCC as $val) {
-                    if(!empty($val["email"])) {
-                        $mail->addBCC($val["email"], $val["name"] ?? "");
+            if (!$smtpIsReachable) {
+                error_log("[Mail Warning] SMTP host {$smtpHost} unreachable on ports 587 & 465 within 1.0s timeout. Synchronous email sending skipped to protect user response time.");
+            }
+        }
+
+        if ($smtpIsReachable) {
+            try {
+                $mail = new PHPMailer(true);
+                $mail->isSMTP();
+                $mail->SMTPDebug = 0;
+                $mail->Host = $smtpHost;
+                $mail->Port = $activePort ?: $smtpPort;
+                $mail->SMTPAuth = true;
+                $mail->SMTPSecure = $activeSecure ?: $smtpSecure;
+                $mail->Username = $smtpUser;
+                $mail->Password = $smtpPass;
+                $mail->CharSet = "utf-8";
+                $mail->Timeout = 3;
+                $mail->Timelimit = 3;
+                $mail->SMTPOptions = array(
+                    'ssl' => array(
+                        'verify_peer' => false,
+                        'verify_peer_name' => false,
+                        'allow_self_signed' => true
+                    )
+                );
+
+                $mail->setFrom($fromEmail, $fromName);
+                $mail->addReplyTo($sendMailObj["reply"] ?? $fromEmail, $sendMailObj["replyInfo"] ?? $fromName);
+                $mail->addAddress($sendMailObj["to"], $sendMailObj["receiver"] ?? "");
+                $mail->isHTML(true);
+                $mail->Subject = $sendMailObj["subject"];
+                $mail->Body = $sendMailObj["content"];
+                $mail->AltBody = isset($sendMailObj["altBody"]) ? $sendMailObj["altBody"] : strip_tags($sendMailObj["content"]);
+
+                if(isset($listMailCC) && is_array($listMailCC)) {
+                    foreach ($listMailCC as $val) {
+                        if(!empty($val["email"])) {
+                            $mail->addCC($val["email"], $val["name"] ?? "");
+                        }
                     }
                 }
-            }
 
-            if ($mail->send()) {
-                error_log("[Mail] Email sent successfully to: " . $sendMailObj["to"]);
-                $isDone = true;
-            } else {
-                error_log("[Mail Error] Failed to send to " . $sendMailObj["to"] . ": " . $mail->ErrorInfo);
+                if(isset($listMailBCC) && is_array($listMailBCC)) {
+                    foreach ($listMailBCC as $val) {
+                        if(!empty($val["email"])) {
+                            $mail->addBCC($val["email"], $val["name"] ?? "");
+                        }
+                    }
+                }
+
+                if ($mail->send()) {
+                    error_log("[Mail] Email sent successfully to: " . $sendMailObj["to"] . " (port: " . ($activePort ?: $smtpPort) . ")");
+                    $isDone = true;
+                } else {
+                    error_log("[Mail Error] Failed to send to " . $sendMailObj["to"] . ": " . $mail->ErrorInfo);
+                }
+            } catch (Exception $e) {
+                error_log("[Mail Exception] " . $e->getMessage());
             }
-        } catch (Exception $e) {
-            error_log("[Mail Exception] " . $e->getMessage());
         }
     }
     // Case 2: OAuth2 authentication (if configured)

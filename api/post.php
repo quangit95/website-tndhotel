@@ -21,5 +21,7 @@ if (isset($url_data[2])) {
 } else {
     // die();
 }
-response($dataResponse, $code, $message, $errors);
+if (!isset($responseSent) || !$responseSent) {
+    response($dataResponse, $code, $message, $errors);
+}
 ?>
