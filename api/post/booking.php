@@ -81,9 +81,13 @@ if($nodeUpdate == "db") {
         $dataResponse = array("sms"=>$messageBooking);
 
 
-        $strEmailto = isset($informationConfig["config"]["email"]["orders"]) && !empty($informationConfig["config"]["email"]["orders"]) 
+        $hotelEmail = isset($informationConfig["config"]["email"]["orders"]) && !empty($informationConfig["config"]["email"]["orders"]) 
             ? $informationConfig["config"]["email"]["orders"] 
             : "info@tndhotelnhatrang.com";
+
+        $salesEmail = isset($informationConfig["config"]["email"]["sales"]) && !empty($informationConfig["config"]["email"]["sales"])
+            ? $informationConfig["config"]["email"]["sales"]
+            : "sales1@tndhotelnhatrang.com";
 
         $customerEmail = isset($post["db"]["em"]) && !empty($post["db"]["em"]) ? trim($post["db"]["em"]) : null;
         $customerName = isset($post["db"]["fn"]) && !empty($post["db"]["fn"]) ? trim($post["db"]["fn"]) : "Quý khách";
@@ -92,9 +96,10 @@ if($nodeUpdate == "db") {
         $roomTime = isset($post["db"]["dt"]) ? $post["db"]["dt"] : "";
         $roomAdult = isset($post["db"]["adult"]) ? $post["db"]["adult"] : "1";
         $roomChild = isset($post["db"]["child"]) && !empty($post["db"]["child"]) ? $post["db"]["child"] : "0";
+        $bookingCreatedTime = date('d/m/Y H:i:s');
 
+        // Customer Confirmation Email Template
         $strSubject = "[TND Hotel] Xác nhận đặt phòng / Booking Confirmation - MS#{$iId}";
-
         $emailHtmlContent = "
 <div style='font-family: Arial, Helvetica, sans-serif; max-width: 600px; margin: 0 auto; border: 1px solid #e2d5b5; border-radius: 8px; overflow: hidden;'>
     <div style='background: #d8a72c; color: #ffffff; padding: 20px; text-align: center;'>
@@ -159,37 +164,101 @@ if($nodeUpdate == "db") {
     </div>
 </div>";
 
+        // Admin & Sales Notification Email Template
+        $adminSubject = "[ĐƠN ĐẶT PHÒNG MỚI] MS#{$iId} - {$roomTitle} - Khách: {$customerName} ({$customerPhone})";
+        $customerEmailDisplay = $customerEmail ? $customerEmail : "Chưa cung cấp";
+
+        $adminEmailHtmlContent = "
+<div style='font-family: Arial, Helvetica, sans-serif; max-width: 650px; margin: 0 auto; border: 1px solid #dcdcdc; border-radius: 8px; overflow: hidden;'>
+    <div style='background: #c29219; color: #ffffff; padding: 18px 24px;'>
+        <h2 style='margin: 0; font-size: 20px;'>THÔNG BÁO ĐẶT PHÒNG MỚI - TND HOTEL</h2>
+        <p style='margin: 5px 0 0; font-size: 13px; opacity: 0.95;'>Mã đơn đặt phòng: <strong>MS#{$iId}</strong> &bull; Thời gian đặt: {$bookingCreatedTime}</p>
+    </div>
+    <div style='padding: 24px; color: #333333; line-height: 1.6; background: #ffffff;'>
+        <p style='font-size: 15px; margin-top: 0;'>Kính gửi <strong>Ban quản trị & Phòng Kinh doanh TND Hotel</strong>,</p>
+        <p style='font-size: 14px;'>Hệ thống website vừa nhận được một yêu cầu đặt phòng mới từ khách hàng. Thông tin chi tiết:</p>
+
+        <div style='background: #fdfbf6; border: 1px solid #faebcc; border-left: 5px solid #c29219; padding: 16px; margin: 18px 0; border-radius: 4px;'>
+            <h3 style='margin: 0 0 12px; color: #a1770e; font-size: 15px; text-transform: uppercase;'>1. Thông tin phòng đặt</h3>
+            <table style='width: 100%; border-collapse: collapse; font-size: 14px;'>
+                <tr>
+                    <td style='padding: 6px 0; color: #666; width: 35%;'>Mã số đơn:</td>
+                    <td style='padding: 6px 0; font-weight: bold; color: #222;'>MS#{$iId}</td>
+                </tr>
+                <tr>
+                    <td style='padding: 6px 0; color: #666;'>Hạng phòng:</td>
+                    <td style='padding: 6px 0; font-weight: bold; color: #c29219; font-size: 15px;'>{$roomTitle}</td>
+                </tr>
+                <tr>
+                    <td style='padding: 6px 0; color: #666;'>Thời gian lưu trú:</td>
+                    <td style='padding: 6px 0; font-weight: bold; color: #222;'>{$roomTime}</td>
+                </tr>
+                <tr>
+                    <td style='padding: 6px 0; color: #666;'>Số lượng khách:</td>
+                    <td style='padding: 6px 0; font-weight: bold; color: #222;'>{$roomAdult} Người lớn &bull; {$roomChild} Trẻ em</td>
+                </tr>
+            </table>
+        </div>
+
+        <div style='background: #f8f9fa; border: 1px solid #e9ecef; border-left: 5px solid #495057; padding: 16px; margin: 18px 0; border-radius: 4px;'>
+            <h3 style='margin: 0 0 12px; color: #343a40; font-size: 15px; text-transform: uppercase;'>2. Thông tin khách hàng</h3>
+            <table style='width: 100%; border-collapse: collapse; font-size: 14px;'>
+                <tr>
+                    <td style='padding: 6px 0; color: #666; width: 35%;'>Họ và tên khách:</td>
+                    <td style='padding: 6px 0; font-weight: bold; color: #222; font-size: 15px;'>{$customerName}</td>
+                </tr>
+                <tr>
+                    <td style='padding: 6px 0; color: #666;'>Số điện thoại:</td>
+                    <td style='padding: 6px 0; font-weight: bold; color: #d9534f; font-size: 16px;'><a href='tel:{$customerPhone}' style='color: #d9534f; text-decoration: none;'>{$customerPhone}</a></td>
+                </tr>
+                <tr>
+                    <td style='padding: 6px 0; color: #666;'>Email khách hàng:</td>
+                    <td style='padding: 6px 0; font-weight: bold; color: #0275d8;'><a href='mailto:{$customerEmail}' style='color: #0275d8; text-decoration: none;'>{$customerEmailDisplay}</a></td>
+                </tr>
+            </table>
+        </div>
+
+        <div style='margin-top: 20px; padding: 14px; background: #eef7fc; border: 1px solid #bce8f1; border-radius: 4px; font-size: 14px; color: #31708f;'>
+            <strong>Nhắc nhở:</strong> Vui lòng liên hệ lại khách hàng qua số điện thoại <strong>{$customerPhone}</strong> để xác nhận đặt phòng và thông báo các thủ tục nhận phòng.
+        </div>
+    </div>
+    <div style='background: #f4f4f4; padding: 12px; text-align: center; font-size: 12px; color: #777; border-top: 1px solid #eaeaea;'>
+        Hệ thống gửi tự động từ Website TND Hotel Nha Trang &bull; Quản trị web &amp; Phòng kinh doanh
+    </div>
+</div>";
+
+        // 1. Gửi email thông báo đơn đặt phòng mới về Quản trị web (To: info@tndhotelnhatrang.com, CC: sales1@tndhotelnhatrang.com)
+        $sendMailObj = array(
+            "from" => $hotelEmail,
+            "to" => $hotelEmail,
+            "sender" => "TND Hotel Website",
+            "receiver" => "TND Hotel Admin",
+            "reply" => $customerEmail ? $customerEmail : $hotelEmail,
+            "replyInfo" => $customerEmail ? $customerName : "TND Hotel Nha Trang",
+            "subject" => $adminSubject,
+            "content" => $adminEmailHtmlContent,
+        );
+        $listMailCC = array(
+            array(
+                "email" => $salesEmail,
+                "name" => "Phòng Kinh Doanh - TND Hotel"
+            )
+        );
+        require dirname(__FILE__) . "/sendmail.php";
+
+        // 2. Gửi email xác nhận đặt phòng trực tiếp cho Khách hàng (nếu khách có điền email)
         if($customerEmail) {
-            // Send directly to customer, CC hotel admin
             $sendMailObj = array(
-                "from" => $strEmailto,
+                "from" => $hotelEmail,
                 "to" => $customerEmail,
                 "sender" => "TND Hotel Nha Trang",
                 "receiver" => $customerName,
-                "reply" => $strEmailto,
+                "reply" => $hotelEmail,
                 "replyInfo" => "TND Hotel Nha Trang",
                 "subject" => $strSubject,
                 "content" => $emailHtmlContent,
             );
-            $listMailCC = array(
-                array(
-                    "email" => $strEmailto,
-                    "name" => "TND Hotel Orders"
-                )
-            );
-            require dirname(__FILE__) . "/sendmail.php";
-        } elseif($strEmailto) {
-            // Customer did not enter email, send to hotel only
-            $sendMailObj = array(
-                "from" => $strEmailto,
-                "to" => $strEmailto,
-                "sender" => "TND Hotel Website",
-                "receiver" => "TND Hotel Admin",
-                "reply" => $strEmailto,
-                "replyInfo" => "TND Hotel Website",
-                "subject" => $strSubject,
-                "content" => $emailHtmlContent,
-            );
+            $listMailCC = null;
             require dirname(__FILE__) . "/sendmail.php";
         }
 
