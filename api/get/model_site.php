@@ -262,7 +262,7 @@ if($node == "orders") {
                     "data-required"=>$language["requireInput"],
                     "data-pattern"=>$language["requireUsernamePattern"],
                     "data-pattern-message"=>$language["requireUsernameRule"],
-                    "data-min-length"=>6,
+                    "data-min-length"=>4,
                     "data-max-length"=>20,
                     "placeholder"=>$language["username"]
                 ),
